@@ -1,0 +1,15 @@
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/bin/Debug/net9.0/MoneyTrack.Application.deps.json
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/bin/Debug/net9.0/MoneyTrack.Application.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/bin/Debug/net9.0/MoneyTrack.Application.pdb
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/bin/Debug/net9.0/MoneyTrack.Domain.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/bin/Debug/net9.0/MoneyTrack.Domain.pdb
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/MoneyTrack.Application.csproj.AssemblyReference.cache
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/MoneyTrack.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/MoneyTrack.Application.AssemblyInfoInputs.cache
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/MoneyTrack.Application.AssemblyInfo.cs
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/MoneyTrack.Application.csproj.CoreCompileInputs.cache
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/MoneyTra.78B80295.Up2Date
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/MoneyTrack.Application.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/refint/MoneyTrack.Application.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/MoneyTrack.Application.pdb
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/ref/MoneyTrack.Application.dll

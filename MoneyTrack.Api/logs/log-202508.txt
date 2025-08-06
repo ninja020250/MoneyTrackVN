@@ -1,0 +1,235 @@
+2025-08-06 12:01:21.163 +07:00 [ERR] An error occurred using the connection to database 'postgresdb' on server 'tcp://localhost:5432'.
+2025-08-06 12:01:22.072 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-06 12:01:22.074 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-06 12:01:22.074 +07:00 [INF] Hosting environment: Development
+2025-08-06 12:01:22.074 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-06 12:01:22.713 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-06 12:01:22.719 +07:00 [INF] HTTP GET / responded 404 in 0.5564 ms
+2025-08-06 12:01:33.832 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-06 12:01:34.339 +07:00 [ERR] HTTP GET /api/demo responded 500 in 523.0370 ms
+MoneyTrack.Application.Exceptions.NotFoundException: User Id d3f0a8f4-95e9-4fc5-8d87-4b7bfa470fc9 is not found.
+   at MoneyTrack.Application.Features.Users.GetUserQueryHandler.Handle(GetUserQuery request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/Users/Queries/GetUserQueryHandler.cs:line 18
+   at MoneyTrack.Api.Controllers.DemoController.Demo() in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/Controllers/DemoController.cs:line 15
+   at lambda_method42(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-08-06 13:08:06.501 +07:00 [ERR] HTTP GET /api/demo responded 500 in 80.5733 ms
+MoneyTrack.Application.Exceptions.NotFoundException: User Id d3f0a8f4-95e9-4fc5-8d87-4b7bfa470fc9 is not found.
+   at MoneyTrack.Application.Features.Users.GetUserQueryHandler.Handle(GetUserQuery request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/Users/Queries/GetUserQueryHandler.cs:line 18
+   at MoneyTrack.Api.Controllers.DemoController.Demo() in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/Controllers/DemoController.cs:line 15
+   at lambda_method42(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-08-06 14:40:19.366 +07:00 [INF] Application is shutting down...
+2025-08-06 14:40:24.979 +07:00 [ERR] An error occurred using the connection to database 'postgresdb' on server 'tcp://localhost:5432'.
+2025-08-06 14:40:25.432 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-06 14:40:25.433 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-06 14:40:25.434 +07:00 [INF] Hosting environment: Development
+2025-08-06 14:40:25.434 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-06 14:40:26.070 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-06 14:40:26.083 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at MoneyTrack.Api.StartupExtensions.<>c__DisplayClass0_0.<ConfigurationService>b__0(JwtBearerOptions options) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/StartupExtensions.cs:line 25
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-06 14:40:46.352 +07:00 [INF] Application is shutting down...
+2025-08-06 14:40:49.691 +07:00 [ERR] An error occurred using the connection to database 'postgresdb' on server 'tcp://localhost:5432'.
+2025-08-06 14:40:50.092 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-06 14:40:50.093 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-06 14:40:50.093 +07:00 [INF] Hosting environment: Development
+2025-08-06 14:40:50.093 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-06 14:40:50.332 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-06 14:40:50.340 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at MoneyTrack.Api.StartupExtensions.<>c__DisplayClass0_0.<ConfigurationService>b__0(JwtBearerOptions options) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/StartupExtensions.cs:line 25
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-08-06 14:41:08.050 +07:00 [INF] Application is shutting down...
+2025-08-06 14:41:11.243 +07:00 [ERR] An error occurred using the connection to database 'postgresdb' on server 'tcp://localhost:5432'.
+2025-08-06 14:41:11.663 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-06 14:41:11.665 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-06 14:41:11.665 +07:00 [INF] Hosting environment: Development
+2025-08-06 14:41:11.665 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-06 14:41:11.792 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-06 14:41:11.811 +07:00 [INF] HTTP GET / responded 404 in 0.3412 ms
+2025-08-06 14:41:13.688 +07:00 [INF] HTTP GET / responded 404 in 0.0496 ms
+2025-08-06 14:41:13.809 +07:00 [INF] HTTP GET / responded 404 in 0.0284 ms
+2025-08-06 14:41:19.554 +07:00 [INF] HTTP GET / responded 404 in 0.0295 ms
+2025-08-06 14:41:19.651 +07:00 [INF] HTTP GET / responded 404 in 0.0223 ms
+2025-08-06 14:41:22.334 +07:00 [INF] HTTP GET /scalar/v1 responded 200 in 84.9043 ms
+2025-08-06 14:41:22.366 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 304 in 3.3242 ms
+2025-08-06 14:41:22.366 +07:00 [INF] HTTP GET /scalar/scalar.js responded 304 in 3.3736 ms
+2025-08-06 14:41:22.567 +07:00 [ERR] HTTP GET /openapi/v1.json responded 500 in 65.2267 ms
+System.InvalidOperationException: Unsupported HTTP method: 
+   at ApiDescriptionExtensions.GetOperationType(ApiDescription apiDescription)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOperationsAsync(IGrouping`2 descriptions, HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiPathsAsync(HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiDocumentAsync(IServiceProvider scopedServiceProvider, HttpRequest httpRequest, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Builder.OpenApiEndpointRouteBuilderExtensions.<>c__DisplayClass0_0.<<MapOpenApi>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F56B68D2B55B5B7B373BA2E4796D897848BC0F04A969B1AF6260183E8B9E0BAF2__GeneratedRouteBuilderExtensionsCore.<>c__DisplayClass2_0.<<MapGet0>g__RequestHandler|5>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-08-06 14:41:22.577 +07:00 [ERR] HTTP GET /openapi/v1.json responded 500 in 0.7168 ms
+System.InvalidOperationException: Unsupported HTTP method: 
+   at ApiDescriptionExtensions.GetOperationType(ApiDescription apiDescription)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOperationsAsync(IGrouping`2 descriptions, HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiPathsAsync(HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiDocumentAsync(IServiceProvider scopedServiceProvider, HttpRequest httpRequest, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Builder.OpenApiEndpointRouteBuilderExtensions.<>c__DisplayClass0_0.<<MapOpenApi>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F56B68D2B55B5B7B373BA2E4796D897848BC0F04A969B1AF6260183E8B9E0BAF2__GeneratedRouteBuilderExtensionsCore.<>c__DisplayClass2_0.<<MapGet0>g__RequestHandler|5>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-08-06 14:41:27.797 +07:00 [INF] HTTP GET /scalar/v1 responded 200 in 2.4224 ms
+2025-08-06 14:41:27.818 +07:00 [INF] HTTP GET /scalar/scalar.js responded 304 in 0.1458 ms
+2025-08-06 14:41:27.822 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 304 in 0.0432 ms
+2025-08-06 14:41:27.874 +07:00 [ERR] HTTP GET /openapi/v1.json responded 500 in 0.7337 ms
+System.InvalidOperationException: Unsupported HTTP method: 
+   at ApiDescriptionExtensions.GetOperationType(ApiDescription apiDescription)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOperationsAsync(IGrouping`2 descriptions, HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiPathsAsync(HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiDocumentAsync(IServiceProvider scopedServiceProvider, HttpRequest httpRequest, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Builder.OpenApiEndpointRouteBuilderExtensions.<>c__DisplayClass0_0.<<MapOpenApi>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F56B68D2B55B5B7B373BA2E4796D897848BC0F04A969B1AF6260183E8B9E0BAF2__GeneratedRouteBuilderExtensionsCore.<>c__DisplayClass2_0.<<MapGet0>g__RequestHandler|5>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-08-06 14:41:27.876 +07:00 [ERR] HTTP GET /openapi/v1.json responded 500 in 0.5100 ms
+System.InvalidOperationException: Unsupported HTTP method: 
+   at ApiDescriptionExtensions.GetOperationType(ApiDescription apiDescription)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOperationsAsync(IGrouping`2 descriptions, HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiPathsAsync(HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiDocumentAsync(IServiceProvider scopedServiceProvider, HttpRequest httpRequest, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Builder.OpenApiEndpointRouteBuilderExtensions.<>c__DisplayClass0_0.<<MapOpenApi>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F56B68D2B55B5B7B373BA2E4796D897848BC0F04A969B1AF6260183E8B9E0BAF2__GeneratedRouteBuilderExtensionsCore.<>c__DisplayClass2_0.<<MapGet0>g__RequestHandler|5>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-08-06 14:41:32.006 +07:00 [INF] HTTP GET /scalar/v1 responded 200 in 0.5380 ms
+2025-08-06 14:41:32.027 +07:00 [INF] HTTP GET /scalar/scalar.js responded 304 in 0.0965 ms
+2025-08-06 14:41:32.030 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 304 in 0.0367 ms
+2025-08-06 14:41:32.078 +07:00 [ERR] HTTP GET /openapi/v1.json responded 500 in 1.5486 ms
+System.InvalidOperationException: Unsupported HTTP method: 
+   at ApiDescriptionExtensions.GetOperationType(ApiDescription apiDescription)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOperationsAsync(IGrouping`2 descriptions, HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiPathsAsync(HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiDocumentAsync(IServiceProvider scopedServiceProvider, HttpRequest httpRequest, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Builder.OpenApiEndpointRouteBuilderExtensions.<>c__DisplayClass0_0.<<MapOpenApi>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F56B68D2B55B5B7B373BA2E4796D897848BC0F04A969B1AF6260183E8B9E0BAF2__GeneratedRouteBuilderExtensionsCore.<>c__DisplayClass2_0.<<MapGet0>g__RequestHandler|5>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-08-06 14:41:32.082 +07:00 [ERR] HTTP GET /openapi/v1.json responded 500 in 0.9370 ms
+System.InvalidOperationException: Unsupported HTTP method: 
+   at ApiDescriptionExtensions.GetOperationType(ApiDescription apiDescription)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOperationsAsync(IGrouping`2 descriptions, HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiPathsAsync(HashSet`1 capturedTags, IServiceProvider scopedServiceProvider, IOpenApiOperationTransformer[] operationTransformers, IOpenApiSchemaTransformer[] schemaTransformers, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.OpenApi.OpenApiDocumentService.GetOpenApiDocumentAsync(IServiceProvider scopedServiceProvider, HttpRequest httpRequest, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Builder.OpenApiEndpointRouteBuilderExtensions.<>c__DisplayClass0_0.<<MapOpenApi>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F56B68D2B55B5B7B373BA2E4796D897848BC0F04A969B1AF6260183E8B9E0BAF2__GeneratedRouteBuilderExtensionsCore.<>c__DisplayClass2_0.<<MapGet0>g__RequestHandler|5>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-08-06 14:42:20.465 +07:00 [INF] Application is shutting down...
+2025-08-06 14:42:23.592 +07:00 [ERR] An error occurred using the connection to database 'postgresdb' on server 'tcp://localhost:5432'.
+2025-08-06 14:42:24.031 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-06 14:42:24.033 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-06 14:42:24.033 +07:00 [INF] Hosting environment: Development
+2025-08-06 14:42:24.033 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-06 14:42:24.362 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-06 14:42:24.385 +07:00 [INF] HTTP GET / responded 404 in 0.3382 ms
+2025-08-06 14:42:35.981 +07:00 [INF] HTTP GET /scalar/v1 responded 200 in 85.2087 ms
+2025-08-06 14:42:36.012 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 304 in 4.7864 ms
+2025-08-06 14:42:36.012 +07:00 [INF] HTTP GET /scalar/scalar.js responded 304 in 4.7620 ms
+2025-08-06 14:42:36.130 +07:00 [INF] HTTP GET /scalar/v1 responded 200 in 1.1593 ms
+2025-08-06 14:42:36.164 +07:00 [ERR] HTTP GET /openapi/v1.json responded 500 in 115.7918 ms
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponsePipeWriter.WriteAsync(ReadOnlyMemory`1 source, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Builder.OpenApiEndpointRouteBuilderExtensions.<>c__DisplayClass0_0.<<MapOpenApi>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Http.Generated.<GeneratedRouteBuilderExtensions_g>F56B68D2B55B5B7B373BA2E4796D897848BC0F04A969B1AF6260183E8B9E0BAF2__GeneratedRouteBuilderExtensionsCore.<>c__DisplayClass2_0.<<MapGet0>g__RequestHandler|5>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-08-06 14:42:36.174 +07:00 [INF] HTTP GET /scalar/scalar.js responded 304 in 0.1628 ms
+2025-08-06 14:42:36.175 +07:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 304 in 0.0279 ms
+2025-08-06 14:42:36.214 +07:00 [INF] HTTP GET /openapi/v1.json responded 200 in 1.3700 ms
+2025-08-06 14:42:36.216 +07:00 [INF] HTTP GET /openapi/v1.json responded 200 in 1.1541 ms
+2025-08-06 14:43:12.376 +07:00 [INF] HTTP OPTIONS /openapi/v1.json responded 405 in 0.1542 ms
+2025-08-06 14:43:12.382 +07:00 [INF] HTTP GET /openapi/v1.json responded 200 in 4.4936 ms
+2025-08-06 14:45:49.079 +07:00 [INF] Application is shutting down...
+2025-08-06 14:45:52.727 +07:00 [ERR] An error occurred using the connection to database 'postgresdb' on server 'tcp://localhost:5432'.
+2025-08-06 14:45:53.165 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-06 14:45:53.167 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-06 14:45:53.167 +07:00 [INF] Hosting environment: Development
+2025-08-06 14:45:53.167 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-06 14:45:53.791 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-06 14:45:53.818 +07:00 [INF] HTTP GET / responded 404 in 0.3548 ms
+2025-08-06 14:46:05.330 +07:00 [INF] HTTP GET /swagger/index.html responded 404 in 0.1324 ms
+2025-08-06 14:46:41.821 +07:00 [INF] Application is shutting down...
+2025-08-06 14:46:45.211 +07:00 [ERR] An error occurred using the connection to database 'postgresdb' on server 'tcp://localhost:5432'.
+2025-08-06 14:46:45.653 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-06 14:46:45.654 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-06 14:46:45.654 +07:00 [INF] Hosting environment: Development
+2025-08-06 14:46:45.654 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-06 14:46:46.118 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-06 14:46:46.175 +07:00 [INF] HTTP GET / responded 404 in 1.0748 ms
+2025-08-06 14:46:46.621 +07:00 [INF] HTTP GET /swagger/v1/swagger.json responded 404 in 0.0528 ms
+2025-08-06 14:46:54.653 +07:00 [INF] HTTP GET /swagger/v1/ responded 404 in 0.0402 ms
+2025-08-06 14:46:58.893 +07:00 [INF] HTTP GET /swagger/v1/index.html responded 404 in 0.0213 ms
+2025-08-06 14:47:20.336 +07:00 [INF] HTTP GET /swagger/v1/swagger.json responded 404 in 0.1291 ms
+2025-08-06 14:47:28.156 +07:00 [INF] Application is shutting down...
+2025-08-06 14:47:31.520 +07:00 [ERR] An error occurred using the connection to database 'postgresdb' on server 'tcp://localhost:5432'.
+2025-08-06 14:47:31.963 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-06 14:47:31.964 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-06 14:47:31.965 +07:00 [INF] Hosting environment: Development
+2025-08-06 14:47:31.965 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-06 14:47:32.402 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-06 14:47:32.498 +07:00 [INF] HTTP GET / responded 404 in 0.4159 ms
+2025-08-06 14:47:33.931 +07:00 [INF] HTTP GET / responded 404 in 0.2455 ms

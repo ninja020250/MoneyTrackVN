@@ -1,0 +1,17 @@
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/bin/Debug/net9.0/MoneyTrack.Infrastructure.deps.json
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/bin/Debug/net9.0/MoneyTrack.Infrastructure.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/bin/Debug/net9.0/MoneyTrack.Infrastructure.pdb
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/bin/Debug/net9.0/MoneyTrack.Application.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/bin/Debug/net9.0/MoneyTrack.Domain.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/bin/Debug/net9.0/MoneyTrack.Application.pdb
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/bin/Debug/net9.0/MoneyTrack.Domain.pdb
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/MoneyTrack.Infrastructure.csproj.AssemblyReference.cache
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/MoneyTrack.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/MoneyTrack.Infrastructure.AssemblyInfoInputs.cache
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/MoneyTrack.Infrastructure.AssemblyInfo.cs
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/MoneyTrack.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/MoneyTra.21E4399B.Up2Date
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/MoneyTrack.Infrastructure.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/refint/MoneyTrack.Infrastructure.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/MoneyTrack.Infrastructure.pdb
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/ref/MoneyTrack.Infrastructure.dll
