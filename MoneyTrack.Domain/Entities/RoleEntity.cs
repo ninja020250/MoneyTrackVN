@@ -19,5 +19,6 @@ public class RoleEntity : AuditableEntity
 
     public string Description { get; set; } = String.Empty;
 
+    [JsonIgnore]
     public ICollection<UserRoleEntity> UserRoles { get; set; } = new List<UserRoleEntity>();
 }

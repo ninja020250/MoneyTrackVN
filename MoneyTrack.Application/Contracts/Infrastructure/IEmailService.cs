@@ -4,5 +4,5 @@ namespace MoneyTrack.Application.Contracts.Infrastructure;
 
 public interface IEmailService
 {
-    Task<bool> SendEmail(Email email);
+    Task SendEmailAsync(Email email);
 }

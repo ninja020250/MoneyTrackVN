@@ -46,7 +46,7 @@ public class JwtService : IJwtService
             audience: _audience,
             claims: claims,
             signingCredentials: signingCredentials,
-            expires: DateTime.Now.AddMinutes(_accessTokenExpirationMinutes));
+            expires: DateTime.UtcNow.AddMinutes(_accessTokenExpirationMinutes));
 
         return new JwtSecurityTokenHandler().WriteToken(tokenDescriptor);
     }
@@ -61,7 +61,7 @@ public class JwtService : IJwtService
 
     public bool ValidateRefreshToken(string refreshToken, UserEntity user)
     {
-        if (user is null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.Now)
+        if (user is null || user.RefreshToken != refreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
             return false;
         return true;
     }

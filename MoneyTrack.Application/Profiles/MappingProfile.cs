@@ -9,7 +9,11 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<UserEntity, GetUserResponse>().ReverseMap();
+        CreateMap<UserEntity, GetUserResponse>()
+            .ForMember(dest => dest.Roles, opt
+                => opt.MapFrom(src => src.UserRoles.Select(ur => ur.Role)))
+            .ReverseMap();
         CreateMap<UserEntity, CreateUserCommand>().ReverseMap();
+        CreateMap<RoleEntity, RoleDTO>();
     }
 }

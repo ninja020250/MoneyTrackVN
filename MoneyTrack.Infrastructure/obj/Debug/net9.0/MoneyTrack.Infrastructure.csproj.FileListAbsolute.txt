@@ -15,3 +15,4 @@
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/refint/MoneyTrack.Infrastructure.dll
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/MoneyTrack.Infrastructure.pdb
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/ref/MoneyTrack.Infrastructure.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/obj/Debug/net9.0/MoneyTrack.Infrastructure.sourcelink.json

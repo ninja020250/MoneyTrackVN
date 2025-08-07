@@ -17,7 +17,7 @@ public class LoginCommandHandler(IUserRepository _userRepository, IJwtService _j
         // Find user by username or email
         var user = await _userRepository.GetByEmailAsync(request.Username);
 
-        if (user == null || user.DeletedDate.HasValue)
+        if (user == null || user.DeletedAt.HasValue)
         {
             throw new UnauthenticatedException("Invalid username or password");
         }

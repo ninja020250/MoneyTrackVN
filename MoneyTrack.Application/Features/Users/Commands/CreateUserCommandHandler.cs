@@ -36,7 +36,7 @@ public class CreateUserCommandHandler(IUserRepository _userRepository, IMapper _
 
         try
         {
-            await _emailService.SendEmail(email);
+            await _emailService.SendEmailAsync(email);
         }
         catch (Exception e)
         {

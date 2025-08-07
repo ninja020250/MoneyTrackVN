@@ -45,6 +45,9 @@ namespace MoneyTrack.Persistence.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("text");
 
@@ -74,6 +77,9 @@ namespace MoneyTrack.Persistence.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
@@ -84,8 +90,9 @@ namespace MoneyTrack.Persistence.Migrations
                     b.Property<DateTime?>("LastModifiedDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<int>("Name")
-                        .HasColumnType("integer");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -95,16 +102,18 @@ namespace MoneyTrack.Persistence.Migrations
                         new
                         {
                             Id = new Guid("af2b2a21-21e7-41a2-8727-c67816796132"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedBy = "System",
+                            CreatedDate = new DateTime(2025, 8, 7, 7, 23, 9, 638, DateTimeKind.Utc).AddTicks(7290),
                             Description = "Administrator role",
-                            Name = 0
+                            Name = "Admin"
                         },
                         new
                         {
                             Id = new Guid("4c5d1784-f350-49da-861c-92c486b4b46c"),
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedBy = "System",
+                            CreatedDate = new DateTime(2025, 8, 7, 7, 23, 9, 638, DateTimeKind.Utc).AddTicks(7540),
                             Description = "Guest role",
-                            Name = 1
+                            Name = "Guest"
                         });
                 });
 
@@ -221,6 +230,9 @@ namespace MoneyTrack.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
@@ -257,7 +269,7 @@ namespace MoneyTrack.Persistence.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<DateTime?>("DeletedDate")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Email")

@@ -32,7 +32,15 @@ public class AuthController(IMediator _mediator) : ControllerBase
             Password = request.Password
         };
 
-        var result = await _mediator.Send(command);
-        return Ok(result);
+        return await _mediator.Send(command);
+    }
+
+    [HttpGet("request-otp")]
+    public async Task<ActionResult> Register([FromQuery] string email)
+    {
+        var command = new RequestOtpCommand() { Email = email };
+
+        await _mediator.Send(command);
+        return Ok();
     }
 }

@@ -1,15 +1,17 @@
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using MoneyTrack.Application.Features.Users;
 
 namespace MoneyTrack.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class UserController : ControllerBase
+public class UserController(IMediator _mediator) : ControllerBase
 {
-    [HttpGet]
-    public async Task<ActionResult<string>> GetUsers()
+    [HttpGet("{userId}")]
+    public async Task<ActionResult<GetUserResponse>> GetUsers(string userId)
     {
-        // Add your implementation here
-        return Ok("Users endpoint working");
+        var userQuery = new GetUserQuery() { UserId = new Guid(userId) };
+        return await _mediator.Send(userQuery);
     }
 }

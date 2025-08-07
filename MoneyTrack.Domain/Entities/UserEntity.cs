@@ -11,8 +11,6 @@ public class UserEntity : AuditableEntity
 
     public string Email { get; set; } = string.Empty;
 
-    public DateTime? DeletedDate { get; set; }
-
     [JsonIgnore] public string PasswordHash { get; set; } = String.Empty;
 
     public string? RefreshToken { get; set; } = string.Empty;

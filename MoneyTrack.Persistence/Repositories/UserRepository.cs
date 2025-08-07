@@ -9,6 +9,14 @@ public class UserRepository(MoneyTrackDbContext _dbContext) : BaseRepository<Use
     public async Task<UserEntity> GetByEmailAsync(string email)
     {
         return await _dbContext.Users.Include(u => u.UserRoles).ThenInclude(u => u.Role)
-            .FirstOrDefaultAsync(u => u.Username.ToLower() == email.ToLower() && u.DeletedDate == null);
+            .FirstOrDefaultAsync(u => u.Username.ToLower() == email.ToLower() && u.DeletedAt == null);
+    }
+
+    public async Task<UserEntity> GetByIdWithRoleAsync(Guid Id)
+    {
+        return await _dbContext.Users
+            .Include(u => u.UserRoles)
+            .ThenInclude(u => u.Role)
+            .FirstOrDefaultAsync(u => u.Id == Id);
     }
 }

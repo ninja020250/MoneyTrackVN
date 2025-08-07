@@ -15,6 +15,9 @@ public static class InfrastructureServiceRegistration
         services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
         services.AddTransient<IEmailService, EmailService>();
         services.AddTransient<IJwtService, JwtService>();
+        services.AddTransient<IJwtService, JwtService>();
+        
+        services.AddSingleton<IOtpService, OtpService>();
 
         return services;
     }

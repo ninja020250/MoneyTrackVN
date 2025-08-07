@@ -9,18 +9,25 @@ public class RoleConfiguration : IEntityTypeConfiguration<RoleEntity>
     public void Configure(EntityTypeBuilder<RoleEntity> builder)
     {
         builder.ToTable("role");
+
+        builder.Property(r => r.Name).HasConversion<string>();
+        
         builder.HasData(
             new RoleEntity
             {
                 Id = new Guid("af2b2a21-21e7-41a2-8727-c67816796132"), // Static Guid
-                Name = RoleName.Admin,
-                Description = "Administrator role"
+                Name =  RoleName.Admin,
+                Description = "Administrator role",
+                CreatedDate = DateTime.UtcNow,
+                CreatedBy = "System"
             },
             new RoleEntity
             {
                 Id = new Guid("4c5d1784-f350-49da-861c-92c486b4b46c"), // Static Guid
                 Name = RoleName.Guest,
-                Description = "Guest role"
+                Description = "Guest role",
+                CreatedDate = DateTime.UtcNow,
+                CreatedBy = "System"
             }
         );
     }

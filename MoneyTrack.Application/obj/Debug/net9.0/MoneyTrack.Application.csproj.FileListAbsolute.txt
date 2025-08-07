@@ -13,3 +13,4 @@
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/refint/MoneyTrack.Application.dll
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/MoneyTrack.Application.pdb
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/ref/MoneyTrack.Application.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/obj/Debug/net9.0/MoneyTrack.Application.sourcelink.json

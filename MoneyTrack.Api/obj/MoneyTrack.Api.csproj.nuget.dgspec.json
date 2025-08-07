@@ -330,9 +330,17 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.13.0, )"
+            },
             "Microsoft.Extensions.Options.ConfigurationExtensions": {
               "target": "Package",
               "version": "[9.0.7, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.13.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

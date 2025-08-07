@@ -7,4 +7,6 @@ public class AuditableEntity
     
     public string? LastModifiedBy { get; set; }
     public DateTime? LastModifiedDate { get; set; }
+    
+    public DateTime? DeletedAt { get; set; }
 }

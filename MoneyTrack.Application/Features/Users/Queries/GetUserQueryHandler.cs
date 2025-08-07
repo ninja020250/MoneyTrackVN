@@ -6,12 +6,12 @@ using MoneyTrack.Domain.Entities;
 
 namespace MoneyTrack.Application.Features.Users;
 
-public class GetUserQueryHandler(IMapper _mapper, IAsyncRepository<UserEntity> _userRepository)
+public class GetUserQueryHandler(IMapper _mapper, IUserRepository _userRepository)
     : IRequestHandler<GetUserQuery, GetUserResponse>
 {
     public async Task<GetUserResponse> Handle(GetUserQuery request, CancellationToken cancellationToken)
     {
-        var user = await _userRepository.GetByIdAsync(request.UserId);
+        var user = await _userRepository.GetByIdWithRoleAsync(request.UserId);
 
         if (user == null)
         {

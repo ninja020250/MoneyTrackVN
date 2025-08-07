@@ -11,6 +11,7 @@ namespace MoneyTrack.Application.Features.Auth.Commands;
 
 public class RegisterCommandHandler(
     IUserRepository _userRepository,
+    IRoleRepository _roleRepository,
     IJwtService _jwtService,
     IMapper _mapper
 ) : IRequestHandler<RegisterCommand, LoginResponse>
@@ -24,6 +25,8 @@ public class RegisterCommandHandler(
             throw new BadRequestException("User with this email already exists");
         }
 
+        var defaultRole = await _roleRepository.GetByNameAsync(RoleName.Guest);
+
         // Create new user
         var user = new UserEntity
         {
@@ -36,9 +39,20 @@ public class RegisterCommandHandler(
                 Email = request.Email,
                 Id = Guid.NewGuid(),
             }, request.Password),
-            CreatedDate = DateTime.UtcNow,
-            CreatedBy = request.Username
+            CreatedBy = request.Username,
         };
+
+        if (defaultRole != null)
+        {
+            user.UserRoles.Add(new UserRoleEntity()
+            {
+                UserId = user.Id, 
+                RoleId = defaultRole.Id,
+                User = user,
+                Role = defaultRole
+            });
+        }
+
 
         // Generate tokens
         var accessToken = _jwtService.GenerateToken(user);
@@ -46,7 +60,7 @@ public class RegisterCommandHandler(
 
         user.RefreshToken = refreshToken;
         user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(365);
-  
+
         await _userRepository.AddAsync(user);
 
         return new LoginResponse

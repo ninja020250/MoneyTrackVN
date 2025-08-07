@@ -10,6 +10,8 @@ public class MoneyTrackDbContext : DbContext
     }
 
     public DbSet<UserEntity> Users { get; set; }
+    
+    public DbSet<RoleEntity> Roles { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -22,10 +24,10 @@ public class MoneyTrackDbContext : DbContext
             switch (entry.State)
             {
                 case EntityState.Added:
-                    entry.Entity.CreatedDate = DateTime.Now;
+                    entry.Entity.CreatedDate = DateTime.UtcNow;
                     break;
                 case EntityState.Modified:
-                    entry.Entity.LastModifiedDate = DateTime.Now;
+                    entry.Entity.LastModifiedDate = DateTime.UtcNow;
                     break;
             }
 
