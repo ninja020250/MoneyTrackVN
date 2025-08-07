@@ -36,11 +36,19 @@ public class AuthController(IMediator _mediator) : ControllerBase
     }
 
     [HttpGet("request-otp")]
-    public async Task<ActionResult> Register([FromQuery] string email)
+    public async Task<ActionResult> RequestOtp([FromQuery] string email)
     {
         var command = new RequestOtpCommand() { Email = email };
 
         await _mediator.Send(command);
         return Ok();
+    }
+
+    [HttpPost("verify-otp")]
+    public async Task<ActionResult<LoginResponse>> VerifyOtp([FromBody] VerifyOtpRequest request)
+    {
+        var command = new VerifyOtpCommand() { Email = request.Email, Otp = request.Otp };
+
+        return await _mediator.Send(command);
     }
 }
