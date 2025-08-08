@@ -10,8 +10,12 @@ public class MoneyTrackDbContext : DbContext
     }
 
     public DbSet<UserEntity> Users { get; set; }
-    
+
     public DbSet<RoleEntity> Roles { get; set; }
+
+    public DbSet<TransactionCategoryEntity> TransactionCategory { get; set; }
+
+    public DbSet<TransactionEntity> Transactions { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

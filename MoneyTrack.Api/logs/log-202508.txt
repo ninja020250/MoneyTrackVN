@@ -2573,3 +2573,149 @@ DROP DATABASE postgres WITH (FORCE);
 2025-08-07 16:12:29.856 +07:00 [INF] HTTP GET / responded 404 in 0.3041 ms
 2025-08-07 16:12:34.660 +07:00 [INF] HTTP GET /api/auth/request-otp responded 200 in 5059.5134 ms
 2025-08-07 16:12:47.480 +07:00 [INF] HTTP POST /api/auth/verify-otp responded 200 in 742.3675 ms
+2025-08-08 14:18:35.941 +07:00 [ERR] Failed executing DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP DATABASE postgres WITH (FORCE);
+2025-08-08 14:18:36.388 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 14:18:36.391 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 14:18:36.392 +07:00 [INF] Hosting environment: Development
+2025-08-08 14:18:36.392 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 14:18:43.505 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-08 14:23:05.781 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-08 14:23:23.040 +07:00 [ERR] HTTP POST /api/transactions responded 500 in 17300.1517 ms
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+TransactionEntity -> CreateTransactionDto
+MoneyTrack.Domain.Entities.TransactionEntity -> MoneyTrack.Application.Models.Transaction.CreateTransactionDto
+
+Type Map configuration:
+TransactionEntity -> CreateTransactionDto
+MoneyTrack.Domain.Entities.TransactionEntity -> MoneyTrack.Application.Models.Transaction.CreateTransactionDto
+
+Destination Member:
+Category
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+TransactionCategoryEntity -> GetCategoryDto
+MoneyTrack.Domain.Entities.TransactionCategoryEntity -> MoneyTrack.Application.Models.Category.GetCategoryDto
+
+Destination Member:
+Category
+
+   at lambda_method231(Closure, TransactionCategoryEntity, GetCategoryDto, ResolutionContext)
+   at lambda_method230(Closure, Object, CreateTransactionDto, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method230(Closure, Object, CreateTransactionDto, ResolutionContext)
+   at MoneyTrack.Application.Features.Transactions.Commands.CreateTransactionCommandHandler.Handle(CreateTransactionCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/Transactions/Commands/CreateTransactionCommandHandler.cs:line 40
+   at MoneyTrack.Api.Controllers.TransactionController.CreateTransaction(CreateTransactionCommand request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/Controllers/TransactionController.cs:line 15
+   at lambda_method32(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-08-08 14:24:51.494 +07:00 [ERR] Failed executing DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP DATABASE postgres WITH (FORCE);
+2025-08-08 14:24:51.935 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 14:24:51.938 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 14:24:51.938 +07:00 [INF] Hosting environment: Development
+2025-08-08 14:24:51.938 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 14:24:54.731 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-08 14:24:54.811 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-08 14:24:58.708 +07:00 [INF] HTTP POST /api/transactions responded 200 in 3905.1549 ms
+2025-08-08 14:25:19.754 +07:00 [INF] HTTP POST /api/transactions responded 200 in 68.2835 ms
+2025-08-08 14:25:30.624 +07:00 [INF] HTTP POST /api/transactions responded 400 in 47.3999 ms
+2025-08-08 15:04:11.087 +07:00 [ERR] Failed executing DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP DATABASE postgres WITH (FORCE);
+2025-08-08 15:04:11.534 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 15:04:11.536 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 15:04:11.537 +07:00 [INF] Hosting environment: Development
+2025-08-08 15:04:11.537 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 15:04:13.151 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-08 15:05:42.504 +07:00 [ERR] Failed executing DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP DATABASE postgres WITH (FORCE);
+2025-08-08 15:05:43.262 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 15:05:43.264 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 15:05:43.265 +07:00 [INF] Hosting environment: Development
+2025-08-08 15:05:43.265 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 15:05:46.111 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-08 15:05:55.570 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-08 15:05:56.507 +07:00 [INF] HTTP GET /api/transactions responded 200 in 969.4705 ms
+2025-08-08 15:30:04.426 +07:00 [ERR] Failed executing DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP DATABASE postgres WITH (FORCE);
+2025-08-08 15:30:04.880 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 15:30:04.883 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 15:30:04.883 +07:00 [INF] Hosting environment: Development
+2025-08-08 15:30:04.884 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 15:30:16.100 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-08 15:30:38.236 +07:00 [ERR] Failed executing DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP DATABASE postgres WITH (FORCE);
+2025-08-08 15:30:38.699 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 15:30:38.702 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 15:30:38.702 +07:00 [INF] Hosting environment: Development
+2025-08-08 15:30:38.703 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 15:32:15.679 +07:00 [ERR] Failed executing DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP DATABASE postgres WITH (FORCE);
+2025-08-08 15:32:16.120 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 15:32:16.123 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 15:32:16.124 +07:00 [INF] Hosting environment: Development
+2025-08-08 15:32:16.124 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 15:33:15.527 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 15:33:15.545 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 15:33:15.546 +07:00 [INF] Hosting environment: Development
+2025-08-08 15:33:15.546 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 15:33:16.046 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-08 15:33:41.570 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 15:33:41.588 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 15:33:41.589 +07:00 [INF] Hosting environment: Development
+2025-08-08 15:33:41.589 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 15:33:41.677 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-08 15:34:53.571 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 15:34:53.589 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 15:34:53.589 +07:00 [INF] Hosting environment: Development
+2025-08-08 15:34:53.589 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 15:35:10.103 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-08 15:35:10.196 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-08 15:35:12.617 +07:00 [ERR] HTTP PUT /api/transactions responded 500 in 2434.4365 ms
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+UpdateTransactionCommand -> TransactionEntity
+MoneyTrack.Application.Features.Transactions.Commands.UpdateTransactionCommand -> MoneyTrack.Domain.Entities.TransactionEntity
+   at lambda_method116(Closure, Object, Object, ResolutionContext)
+   at MoneyTrack.Application.Features.Transactions.Commands.UpdateTransactionCommandHandler.Handle(UpdateTransactionCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/Transactions/Commands/UpdateTransactionCommandHandler.cs:line 35
+   at MoneyTrack.Api.Controllers.TransactionController.UpdateTransaction(UpdateTransactionCommand request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/Controllers/TransactionController.cs:line 23
+   at lambda_method6(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-08-08 15:35:41.470 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 15:35:41.491 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 15:35:41.491 +07:00 [INF] Hosting environment: Development
+2025-08-08 15:35:41.491 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 15:35:44.221 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-08 15:35:44.303 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-08 15:35:46.613 +07:00 [INF] HTTP PUT /api/transactions responded 200 in 2320.5515 ms
+2025-08-08 15:37:03.647 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-08 15:37:03.665 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-08 15:37:03.665 +07:00 [INF] Hosting environment: Development
+2025-08-08 15:37:03.665 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-08 15:37:05.695 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-08 15:37:05.781 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-08 15:37:08.280 +07:00 [INF] HTTP PUT /api/transactions responded 200 in 2513.9616 ms
+2025-08-08 15:37:23.748 +07:00 [INF] HTTP GET /api/transactions responded 200 in 88.1097 ms
+2025-08-08 15:37:42.948 +07:00 [INF] HTTP GET /api/transactions responded 200 in 56.4072 ms

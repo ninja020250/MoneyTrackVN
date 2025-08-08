@@ -8,7 +8,8 @@ namespace MoneyTrack.Persistence;
 
 public static class PersistenceServiceRegistration
 {
-    public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddPersistenceServices(this IServiceCollection services,
+        IConfiguration configuration)
     {
         var connectionString = Environment.GetEnvironmentVariable("DB_HOST") != null
             ? $"Host={Environment.GetEnvironmentVariable("DB_HOST")};Port={Environment.GetEnvironmentVariable("DB_PORT")};Database={Environment.GetEnvironmentVariable("DB_DATABASE")};Username={Environment.GetEnvironmentVariable("DB_USERNAME")};Password={Environment.GetEnvironmentVariable("DB_PASSWORD")};TrustServerCertificate=True"
@@ -18,9 +19,11 @@ public static class PersistenceServiceRegistration
             options.UseNpgsql(connectionString));
 
         services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
-        
+
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IRoleRepository, RoleRepository>();
+        services.AddScoped<ITransactionRepository, TransactionRepository>();
+        services.AddScoped<ITransactionCategoryRepository, TransactionCategoryRepository>();
 
         return services;
     }
