@@ -12,13 +12,13 @@ public class CreateTransactionCommandHandler(
     ITransactionCategoryRepository _transactionCategory,
     IMapper _mapper
 )
-    : IRequestHandler<CreateTransactionCommand, CreateTransactionCommandResponse>
+    : IRequestHandler<CreateTransactionCommand, TransactionResponse>
 {
-    public async Task<CreateTransactionCommandResponse> Handle(CreateTransactionCommand request,
+    public async Task<TransactionResponse> Handle(CreateTransactionCommand request,
         CancellationToken cancellationToken)
     {
         var validator = new CreateTransactionCommandValidator(_transactionCategory);
-        var createTransactionCommandResponse = new CreateTransactionCommandResponse();
+        var createTransactionCommandResponse = new TransactionResponse();
         var validationResult = await validator.ValidateAsync(request);
 
         if (validationResult.Errors.Count > 0)

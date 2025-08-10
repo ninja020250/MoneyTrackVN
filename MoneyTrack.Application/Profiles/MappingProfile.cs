@@ -19,6 +19,8 @@ public class MappingProfile : Profile
         CreateMap<UserEntity, CreateUserCommand>().ReverseMap();
         CreateMap<RoleEntity, RoleDTO>();
         CreateMap<CreateTransactionCommand, TransactionEntity>();
+        CreateMap<CreateTransactionRequest, CreateTransactionCommand>();
+        CreateMap<CreateTransactionRequest, TransactionEntity>();
         CreateMap<UpdateTransactionCommand, TransactionEntity>();
         CreateMap<TransactionEntity, GetTransactionDto>();
         CreateMap<TransactionCategoryEntity, GetCategoryDto>();

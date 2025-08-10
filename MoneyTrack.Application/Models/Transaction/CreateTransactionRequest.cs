@@ -1,9 +1,6 @@
-using System.Transactions;
-using MediatR;
+namespace MoneyTrack.Application.Models.Transaction;
 
-namespace MoneyTrack.Application.Features.Transactions.Commands;
-
-public class CreateTransactionCommand : IRequest<CreateTransactionCommandResponse>
+public class CreateTransactionRequest
 {
     public string Description { get; set; }
 
@@ -12,7 +9,6 @@ public class CreateTransactionCommand : IRequest<CreateTransactionCommandRespons
     public DateTime ExpenseDate { get; set; }
 
     public Guid UserId { get; set; }
-
 
     public string CategoryCode { get; set; }
 }

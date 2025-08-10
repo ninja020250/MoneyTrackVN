@@ -1,8 +1,9 @@
 using MediatR;
+using MoneyTrack.Application.Models.Transaction;
 
 namespace MoneyTrack.Application.Features.Transactions.Commands;
 
-public class UpdateTransactionCommand : IRequest<CreateTransactionCommandResponse>
+public class UpdateTransactionCommand : IRequest<TransactionResponse>
 {
     public Guid Id { get; set; }
     
