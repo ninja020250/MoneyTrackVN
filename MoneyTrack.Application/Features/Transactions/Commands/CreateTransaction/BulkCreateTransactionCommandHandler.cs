@@ -11,16 +11,16 @@ public class BulkCreateTransactionCommandHandler(
     ITransactionRepository _transactionRepository,
     ITransactionCategoryRepository _transactionCategory,
     IMapper _mapper)
-    : IRequestHandler<BulkCreateTransactionCommand, GetTransactionResponse>
+    : IRequestHandler<BulkCreateTransactionCommand, GetListTransactionResponse>
 {
-    public async Task<GetTransactionResponse> Handle(BulkCreateTransactionCommand request,
+    public async Task<GetListTransactionResponse> Handle(BulkCreateTransactionCommand request,
         CancellationToken cancellationToken)
     {
         // Validate the bulk command itself
         var bulkValidator = new BulkCreateTransactionCommandValidator();
         var bulkValidationResult = await bulkValidator.ValidateAsync(request, cancellationToken);
         
-        var response = new GetTransactionResponse();
+        var response = new GetListTransactionResponse();
         var createdTransactions = new List<GetTransactionDto>();
         var validationErrors = new List<string>();
         

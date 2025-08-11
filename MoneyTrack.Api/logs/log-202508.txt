@@ -2737,3 +2737,1159 @@ MoneyTrack.Application.Features.Transactions.Commands.UpdateTransactionCommand -
 2025-08-11 14:04:45.947 +07:00 [INF] Application started. Press Ctrl+C to shut down.
 2025-08-11 14:04:45.947 +07:00 [INF] Hosting environment: Development
 2025-08-11 14:04:45.947 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:24:15.042 +07:00 [INF] Application is shutting down...
+2025-08-11 15:24:20.697 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:24:20.709 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:24:20.709 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:24:20.710 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:24:30.518 +07:00 [INF] Application is shutting down...
+2025-08-11 15:24:33.130 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:24:33.142 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:24:33.143 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:24:33.143 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:24:50.926 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 15:35:00.745 +07:00 [INF] Application is shutting down...
+2025-08-11 15:38:07.310 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:38:07.322 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:38:07.322 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:38:07.322 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:39:44.045 +07:00 [INF] Application is shutting down...
+2025-08-11 15:39:46.854 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:39:46.867 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:39:46.867 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:39:46.867 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:39:48.930 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 15:39:48.980 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 15:39:49.179 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ hết 200k
+2025-08-11 15:39:50.064 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ hết 200k
+2025-08-11 15:39:50.178 +07:00 [ERR] Error parsing transaction message: Đi chợ hết 200k
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 153
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+2025-08-11 15:39:50.185 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+System.InvalidOperationException: Failed to parse transaction message using AI
+ ---> System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 153
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+   --- End of inner exception stack trace ---
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 64
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 48
+2025-08-11 15:39:50.228 +07:00 [INF] HTTP POST /api/auth/create-transaction responded 200 in 1256.5389 ms
+2025-08-11 15:40:01.993 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ hết 200k
+2025-08-11 15:40:02.024 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ hết 200k
+2025-08-11 15:40:02.025 +07:00 [ERR] Error parsing transaction message: Đi chợ hết 200k
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 153
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+2025-08-11 15:40:02.026 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+System.InvalidOperationException: Failed to parse transaction message using AI
+ ---> System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 153
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+   --- End of inner exception stack trace ---
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 64
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 48
+2025-08-11 15:40:02.026 +07:00 [INF] HTTP POST /api/auth/create-transaction responded 200 in 38.9763 ms
+2025-08-11 15:40:02.923 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ hết 200k
+2025-08-11 15:40:02.939 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ hết 200k
+2025-08-11 15:40:02.941 +07:00 [ERR] Error parsing transaction message: Đi chợ hết 200k
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 153
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+2025-08-11 15:40:02.942 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+System.InvalidOperationException: Failed to parse transaction message using AI
+ ---> System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 153
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+   --- End of inner exception stack trace ---
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 64
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 48
+2025-08-11 15:40:02.943 +07:00 [INF] HTTP POST /api/auth/create-transaction responded 200 in 25.7356 ms
+2025-08-11 15:40:20.943 +07:00 [INF] Application is shutting down...
+2025-08-11 15:40:23.732 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:40:23.745 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:40:23.745 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:40:23.745 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:40:37.559 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 15:40:37.586 +07:00 [INF] HTTP POST /api/auth/create-transaction responded 404 in 0.3205 ms
+2025-08-11 15:40:40.222 +07:00 [INF] HTTP POST /api/auth/create-transaction responded 404 in 0.0997 ms
+2025-08-11 15:41:02.030 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 15:41:02.225 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:41:03.087 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:41:03.181 +07:00 [ERR] Error parsing transaction message: Đi chợ 200k
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 153
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+2025-08-11 15:41:03.188 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+System.InvalidOperationException: Failed to parse transaction message using AI
+ ---> System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 153
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+   --- End of inner exception stack trace ---
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 64
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 48
+2025-08-11 15:41:03.216 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 1204.0040 ms
+2025-08-11 15:41:42.741 +07:00 [INF] Application is shutting down...
+2025-08-11 15:41:50.139 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:41:50.151 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:41:50.151 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:41:50.151 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:41:54.979 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 15:41:55.043 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 15:41:55.299 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:41:56.416 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:41:56.767 +07:00 [ERR] Error parsing transaction message: Đi chợ 200k
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 153
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+2025-08-11 15:42:20.946 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+System.InvalidOperationException: Failed to parse transaction message using AI
+ ---> System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 153
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+   --- End of inner exception stack trace ---
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 64
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 48
+2025-08-11 15:42:24.191 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 29155.9430 ms
+2025-08-11 15:42:52.963 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:42:52.987 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:43:09.390 +07:00 [ERR] Error parsing transaction message: Đi chợ 200k
+System.InvalidOperationException: An invalid request URI was provided. Either the request URI must be an absolute URI or BaseAddress must be set.
+   at System.Net.Http.HttpClient.PrepareRequestMessage(HttpRequestMessage request)
+   at System.Net.Http.HttpClient.SendAsync(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationToken cancellationToken)
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 153
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+2025-08-11 15:43:15.292 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:43:15.304 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:43:15.305 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:43:15.305 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:43:22.217 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 15:43:22.288 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 15:43:22.522 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:43:23.528 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:43:51.093 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:43:51.105 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:43:51.105 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:43:51.105 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:43:59.652 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 15:43:59.709 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 15:43:59.943 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:44:00.966 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:44:03.292 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash/generateContent?*
+2025-08-11 15:44:03.296 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash/generateContent?*
+2025-08-11 15:44:03.786 +07:00 [INF] Received HTTP response headers after 487.5747ms - 404
+2025-08-11 15:44:03.789 +07:00 [INF] End processing HTTP request after 506.8706ms - 404
+2025-08-11 15:44:03.791 +07:00 [ERR] Gemini API error: "NotFound" - 
+2025-08-11 15:44:03.882 +07:00 [ERR] Error parsing transaction message: Đi chợ 200k
+System.Net.Http.HttpRequestException: Gemini API call failed: NotFound
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 159
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+2025-08-11 15:44:12.868 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+System.InvalidOperationException: Failed to parse transaction message using AI
+ ---> System.Net.Http.HttpRequestException: Gemini API call failed: NotFound
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 159
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+   --- End of inner exception stack trace ---
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 64
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 48
+2025-08-11 15:44:12.916 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 13213.1100 ms
+2025-08-11 15:45:02.068 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:45:02.080 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:45:02.080 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:45:02.080 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:45:02.467 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 15:45:02.523 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 15:45:02.757 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:45:03.807 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:45:07.408 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:45:07.411 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:45:07.879 +07:00 [INF] Received HTTP response headers after 465.2457ms - 403
+2025-08-11 15:45:07.883 +07:00 [INF] End processing HTTP request after 481.6388ms - 403
+2025-08-11 15:45:07.886 +07:00 [ERR] Gemini API error: "Forbidden" - {
+  "error": {
+    "code": 403,
+    "message": "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2025-08-11 15:45:08.010 +07:00 [ERR] Error parsing transaction message: Đi chợ 200k
+System.Net.Http.HttpRequestException: Gemini API call failed: Forbidden
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 159
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+2025-08-11 15:45:23.438 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+System.InvalidOperationException: Failed to parse transaction message using AI
+ ---> System.Net.Http.HttpRequestException: Gemini API call failed: Forbidden
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 159
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+   --- End of inner exception stack trace ---
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 64
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 48
+2025-08-11 15:45:23.484 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 20968.9532 ms
+2025-08-11 15:45:27.438 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:45:27.468 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:45:37.258 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:45:37.259 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:45:37.517 +07:00 [INF] Received HTTP response headers after 258.331ms - 403
+2025-08-11 15:45:37.518 +07:00 [INF] End processing HTTP request after 263.0435ms - 403
+2025-08-11 15:45:37.519 +07:00 [ERR] Gemini API error: "Forbidden" - {
+  "error": {
+    "code": 403,
+    "message": "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+2025-08-11 15:45:37.589 +07:00 [ERR] Error parsing transaction message: Đi chợ 200k
+System.Net.Http.HttpRequestException: Gemini API call failed: Forbidden
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 159
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+2025-08-11 15:45:39.322 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+System.InvalidOperationException: Failed to parse transaction message using AI
+ ---> System.Net.Http.HttpRequestException: Gemini API call failed: Forbidden
+   at MoneyTrack.Infrastructure.AI.GeminiService.CallGeminiApiAsync(Object request) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 159
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 49
+   --- End of inner exception stack trace ---
+   at MoneyTrack.Infrastructure.AI.GeminiService.ParseMessageToObjectAsync(String message, String language, String currencyUnit, IReadOnlyList`1 categories, Guid userId) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Infrastructure/AI/GeminiService.cs:line 64
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 48
+2025-08-11 15:45:39.325 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 11895.2059 ms
+2025-08-11 15:46:24.701 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:46:24.713 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:46:24.713 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:46:24.713 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:46:25.067 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 15:46:25.122 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 15:46:25.364 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:46:26.369 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:46:29.667 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:46:29.669 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:46:30.808 +07:00 [INF] Received HTTP response headers after 1136.8831ms - 200
+2025-08-11 15:46:30.811 +07:00 [INF] End processing HTTP request after 1149.3727ms - 200
+2025-08-11 15:46:31.120 +07:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Double), @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = DateTime), @p8='?', @p9='?' (DbType = DateTime), @p10='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO transaction ("Id", "Amount", "CategoryId", "CreatedBy", "CreatedDate", "DeletedAt", "Description", "ExpenseDate", "LastModifiedBy", "LastModifiedDate", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2025-08-11 15:46:31.139 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'MoneyTrack.Persistence.MoneyTrackDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-11 15:46:31.213 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MoneyTrack.Persistence.Repositories.BaseRepository`1.AddAsync(T entity) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Persistence/Repositories/BaseRepository.cs:line 21
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 80
+2025-08-11 15:46:31.252 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 6138.6518 ms
+2025-08-11 15:46:33.116 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:46:33.145 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:46:33.147 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:46:33.147 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:46:34.185 +07:00 [INF] Received HTTP response headers after 1036.8396ms - 200
+2025-08-11 15:46:34.185 +07:00 [INF] End processing HTTP request after 1038.685ms - 200
+2025-08-11 15:46:34.198 +07:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Double), @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = DateTime), @p8='?', @p9='?' (DbType = DateTime), @p10='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO transaction ("Id", "Amount", "CategoryId", "CreatedBy", "CreatedDate", "DeletedAt", "Description", "ExpenseDate", "LastModifiedBy", "LastModifiedDate", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2025-08-11 15:46:34.201 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'MoneyTrack.Persistence.MoneyTrackDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-11 15:46:34.250 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MoneyTrack.Persistence.Repositories.BaseRepository`1.AddAsync(T entity) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Persistence/Repositories/BaseRepository.cs:line 21
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 80
+2025-08-11 15:46:34.253 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 1142.0275 ms
+2025-08-11 15:46:39.550 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:46:39.561 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:46:51.590 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:46:51.592 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:46:52.787 +07:00 [INF] Received HTTP response headers after 1194.5818ms - 200
+2025-08-11 15:46:52.788 +07:00 [INF] End processing HTTP request after 1199.9733ms - 200
+2025-08-11 15:46:52.802 +07:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Double), @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = DateTime), @p8='?', @p9='?' (DbType = DateTime), @p10='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO transaction ("Id", "Amount", "CategoryId", "CreatedBy", "CreatedDate", "DeletedAt", "Description", "ExpenseDate", "LastModifiedBy", "LastModifiedDate", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2025-08-11 15:46:52.805 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'MoneyTrack.Persistence.MoneyTrackDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-11 15:46:52.904 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MoneyTrack.Persistence.Repositories.BaseRepository`1.AddAsync(T entity) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Persistence/Repositories/BaseRepository.cs:line 21
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 80
+2025-08-11 15:46:52.907 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 13369.6156 ms
+2025-08-11 15:47:08.765 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:47:08.774 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:47:08.775 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:47:08.776 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:47:09.923 +07:00 [INF] Received HTTP response headers after 1146.7699ms - 200
+2025-08-11 15:47:09.924 +07:00 [INF] End processing HTTP request after 1148.1017ms - 200
+2025-08-11 15:49:04.246 +07:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Double), @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = DateTime), @p8='?', @p9='?' (DbType = DateTime), @p10='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO transaction ("Id", "Amount", "CategoryId", "CreatedBy", "CreatedDate", "DeletedAt", "Description", "ExpenseDate", "LastModifiedBy", "LastModifiedDate", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2025-08-11 15:49:04.251 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'MoneyTrack.Persistence.MoneyTrackDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-11 15:49:04.384 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MoneyTrack.Persistence.Repositories.BaseRepository`1.AddAsync(T entity) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Persistence/Repositories/BaseRepository.cs:line 21
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 80
+2025-08-11 15:49:04.387 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 115625.7758 ms
+2025-08-11 15:49:56.823 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:49:56.837 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:49:56.839 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:49:56.839 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:49:58.144 +07:00 [INF] Received HTTP response headers after 1304.8321ms - 200
+2025-08-11 15:49:58.144 +07:00 [INF] End processing HTTP request after 1305.6322ms - 200
+2025-08-11 15:51:38.426 +07:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Double), @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = DateTime), @p8='?', @p9='?' (DbType = DateTime), @p10='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO transaction ("Id", "Amount", "CategoryId", "CreatedBy", "CreatedDate", "DeletedAt", "Description", "ExpenseDate", "LastModifiedBy", "LastModifiedDate", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2025-08-11 15:51:38.431 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'MoneyTrack.Persistence.MoneyTrackDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-11 15:51:38.516 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MoneyTrack.Persistence.Repositories.BaseRepository`1.AddAsync(T entity) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Persistence/Repositories/BaseRepository.cs:line 21
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 80
+2025-08-11 15:51:38.519 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 101702.0273 ms
+2025-08-11 15:53:11.320 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:53:11.336 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:53:11.337 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:53:11.337 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:53:14.280 +07:00 [INF] Received HTTP response headers after 2942.7127ms - 200
+2025-08-11 15:53:14.281 +07:00 [INF] End processing HTTP request after 2944.0852ms - 200
+2025-08-11 15:53:14.307 +07:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Double), @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = DateTime), @p8='?', @p9='?' (DbType = DateTime), @p10='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO transaction ("Id", "Amount", "CategoryId", "CreatedBy", "CreatedDate", "DeletedAt", "Description", "ExpenseDate", "LastModifiedBy", "LastModifiedDate", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2025-08-11 15:53:14.313 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'MoneyTrack.Persistence.MoneyTrackDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-11 15:53:14.413 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MoneyTrack.Persistence.Repositories.BaseRepository`1.AddAsync(T entity) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Persistence/Repositories/BaseRepository.cs:line 21
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 80
+2025-08-11 15:53:54.388 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:53:54.402 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:53:54.403 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:53:54.403 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:53:56.420 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 15:53:56.483 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 15:53:56.723 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:53:57.798 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:53:57.957 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:53:57.960 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:54:00.407 +07:00 [INF] Received HTTP response headers after 2443.8349ms - 200
+2025-08-11 15:54:00.409 +07:00 [INF] End processing HTTP request after 2457.2549ms - 200
+2025-08-11 15:54:00.638 +07:00 [INF] Successfully created transaction "1770e6e8-2582-4993-92fb-1c140120c78e" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 15:54:00.688 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 4212.5513 ms
+2025-08-11 15:54:32.158 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:54:32.170 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:54:32.170 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:54:32.170 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:57:04.387 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 15:57:04.399 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 15:57:04.400 +07:00 [INF] Hosting environment: Development
+2025-08-11 15:57:04.400 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 15:57:04.897 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 15:57:04.956 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 15:57:05.189 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 15:57:06.255 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 15:57:06.416 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:57:06.419 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 15:57:09.079 +07:00 [INF] Received HTTP response headers after 2657.7628ms - 200
+2025-08-11 15:57:09.082 +07:00 [INF] End processing HTTP request after 2671.239ms - 200
+2025-08-11 15:57:09.291 +07:00 [ERR] Failed executing DbCommand (13ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Double), @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = DateTime), @p8='?', @p9='?' (DbType = DateTime), @p10='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO transaction ("Id", "Amount", "CategoryId", "CreatedBy", "CreatedDate", "DeletedAt", "Description", "ExpenseDate", "LastModifiedBy", "LastModifiedDate", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2025-08-11 15:57:09.308 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'MoneyTrack.Persistence.MoneyTrackDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-11 16:00:04.464 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 16:00:04.475 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 16:00:04.476 +07:00 [INF] Hosting environment: Development
+2025-08-11 16:00:04.476 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 16:00:04.902 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 16:00:04.953 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 16:00:05.186 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:00:06.199 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:00:06.350 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:00:06.352 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:00:08.038 +07:00 [INF] Received HTTP response headers after 1680.414ms - 200
+2025-08-11 16:00:08.043 +07:00 [INF] End processing HTTP request after 1697.7263ms - 200
+2025-08-11 16:00:08.268 +07:00 [INF] Successfully created transaction "17eebd6d-828a-4877-abdc-dc9d0208d4bf" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 16:00:08.310 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 3365.1364 ms
+2025-08-11 16:01:24.783 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 16:01:24.795 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 16:01:24.795 +07:00 [INF] Hosting environment: Development
+2025-08-11 16:01:24.795 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 16:01:26.270 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 16:01:26.332 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 16:01:26.567 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:01:27.584 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:01:27.736 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:01:27.738 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:01:29.528 +07:00 [INF] Received HTTP response headers after 1786.746ms - 200
+2025-08-11 16:01:29.530 +07:00 [INF] End processing HTTP request after 1799.2265ms - 200
+2025-08-11 16:01:29.744 +07:00 [INF] Successfully created transaction "b23252e8-e3e0-49f0-bc66-ba49b72b64f0" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 16:01:29.787 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 3463.5908 ms
+2025-08-11 16:01:51.896 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:01:51.928 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:01:51.931 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:01:51.932 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:01:53.862 +07:00 [INF] Received HTTP response headers after 1930.6925ms - 200
+2025-08-11 16:01:53.863 +07:00 [INF] End processing HTTP request after 1932.578ms - 200
+2025-08-11 16:02:11.625 +07:00 [INF] Successfully created transaction "a83d1e9e-4ff7-4aba-bb36-b05569418d65" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 16:02:11.627 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 19739.2962 ms
+2025-08-11 16:03:38.870 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 16:03:38.883 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 16:03:38.883 +07:00 [INF] Hosting environment: Development
+2025-08-11 16:03:38.883 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 16:03:38.980 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 16:03:39.041 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 16:03:39.276 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:03:40.285 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:03:40.437 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:03:40.439 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:03:41.864 +07:00 [INF] Received HTTP response headers after 1421.2763ms - 200
+2025-08-11 16:03:41.867 +07:00 [INF] End processing HTTP request after 1434.9342ms - 200
+2025-08-11 16:03:42.094 +07:00 [INF] Successfully created transaction "b5145fb0-a500-4bc9-93e0-f4bbc1e22326" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 16:03:42.139 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 3106.5385 ms
+2025-08-11 16:03:43.782 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:03:43.811 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:03:43.813 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:03:43.813 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:03:45.055 +07:00 [INF] Received HTTP response headers after 1240.9329ms - 200
+2025-08-11 16:03:45.055 +07:00 [INF] End processing HTTP request after 1243.0718ms - 200
+2025-08-11 16:03:45.072 +07:00 [INF] Successfully created transaction "29e7624f-fcc1-4d43-816e-b6be1421c160" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 16:03:45.074 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 1301.1756 ms
+2025-08-11 16:04:31.709 +07:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.3216 ms
+2025-08-11 16:05:36.700 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:05:36.726 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:05:53.395 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:05:53.396 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?*
+2025-08-11 16:05:54.779 +07:00 [INF] Received HTTP response headers after 1382.5987ms - 200
+2025-08-11 16:05:54.779 +07:00 [INF] End processing HTTP request after 1384.0907ms - 200
+2025-08-11 16:05:54.792 +07:00 [INF] Successfully created transaction "c79e54f4-8506-4d46-a810-6fe99004870c" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 16:05:54.794 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 18105.1259 ms
+2025-08-11 16:06:02.027 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:06:02.034 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:06:55.160 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 16:06:55.172 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 16:06:55.173 +07:00 [INF] Hosting environment: Development
+2025-08-11 16:06:55.173 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 16:06:55.793 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 16:06:55.852 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 16:06:56.080 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:06:57.294 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:07:01.439 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:07:01.441 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:07:04.128 +07:00 [INF] Received HTTP response headers after 2682.1801ms - 200
+2025-08-11 16:07:04.130 +07:00 [INF] End processing HTTP request after 2697.0307ms - 200
+2025-08-11 16:07:04.373 +07:00 [INF] Successfully created transaction "44490829-6e1a-48e1-b93c-3c05ef26eaa8" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 16:07:04.417 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 8574.0617 ms
+2025-08-11 16:08:49.097 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:08:49.124 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:08:49.126 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:08:49.126 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:08:51.657 +07:00 [INF] Received HTTP response headers after 2529.796ms - 200
+2025-08-11 16:08:51.657 +07:00 [INF] End processing HTTP request after 2531.7581ms - 200
+2025-08-11 16:12:10.597 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 16:12:10.609 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 16:12:10.609 +07:00 [INF] Hosting environment: Development
+2025-08-11 16:12:10.609 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 16:12:11.126 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 16:12:11.182 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 16:12:11.464 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:12:12.601 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:12:12.759 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:12:12.762 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:12:16.330 +07:00 [INF] Received HTTP response headers after 3565.9234ms - 200
+2025-08-11 16:12:16.334 +07:00 [INF] End processing HTTP request after 3580.6474ms - 200
+2025-08-11 16:12:18.708 +07:00 [INF] Successfully created transaction "b904766f-ca0f-431f-975f-d0f58a592d55" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 16:12:18.753 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 7578.8094 ms
+2025-08-11 16:13:53.216 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 16:13:53.227 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 16:13:53.228 +07:00 [INF] Hosting environment: Development
+2025-08-11 16:13:53.228 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 16:14:57.231 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 16:14:57.243 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 16:14:57.243 +07:00 [INF] Hosting environment: Development
+2025-08-11 16:14:57.244 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 16:15:01.895 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 16:15:01.968 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 16:15:02.214 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:15:03.264 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:15:03.422 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:15:03.424 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:15:05.959 +07:00 [INF] Received HTTP response headers after 2521.2355ms - 200
+2025-08-11 16:15:05.964 +07:00 [INF] End processing HTTP request after 2547.254ms - 200
+2025-08-11 16:15:11.570 +07:00 [INF] Successfully created transaction "cd3a5c41-a7a8-45d1-90a9-f360e1403a74" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 16:15:11.617 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 9657.9088 ms
+2025-08-11 16:16:00.415 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 16:16:00.426 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 16:16:00.427 +07:00 [INF] Hosting environment: Development
+2025-08-11 16:16:00.427 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 16:16:04.344 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 16:16:04.404 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 16:16:04.656 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:16:05.674 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:16:05.828 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:16:05.831 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:16:08.568 +07:00 [INF] Received HTTP response headers after 2730.7241ms - 200
+2025-08-11 16:16:08.573 +07:00 [INF] End processing HTTP request after 2749.3099ms - 200
+2025-08-11 16:16:08.790 +07:00 [ERR] Failed executing DbCommand (13ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Double), @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?' (DbType = DateTime), @p8='?', @p9='?' (DbType = DateTime), @p10='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO transaction ("Id", "Amount", "CategoryId", "CreatedBy", "CreatedDate", "DeletedAt", "Description", "ExpenseDate", "LastModifiedBy", "LastModifiedDate", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2025-08-11 16:16:08.808 +07:00 [ERR] An exception occurred in the database while saving changes for context type 'MoneyTrack.Persistence.MoneyTrackDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-08-11 16:16:16.288 +07:00 [ERR] Error creating transaction from message for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.ArgumentException: Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array, range, or multirange. (Parameter 'value')
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(DateTime value, Nullable`1 expectedPgTypeId, Boolean validateOnly)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver.<>c.<CreateResolver>b__0_0(DateTimeConverterResolver`1 resolver, DateTime value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.Converters.DateTimeConverterResolver`1.Get(T value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgConverterResolver`1.GetAsObjectInternal(PgTypeInfo typeInfo, Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgResolverTypeInfo.GetResolutionAsObject(Object value, Nullable`1 expectedPgTypeId)
+   at Npgsql.Internal.PgTypeInfo.GetObjectResolution(Object value)
+   at Npgsql.NpgsqlParameter.ResolveConverter(PgTypeInfo typeInfo)
+   at Npgsql.NpgsqlParameter.ResolveTypeInfo(PgSerializerOptions options)
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(PgSerializerOptions options, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at MoneyTrack.Persistence.Repositories.BaseRepository`1.AddAsync(T entity) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Persistence/Repositories/BaseRepository.cs:line 21
+   at MoneyTrack.Application.Features.AI.CreateTransactionFromMessageCommandHandler.Handle(CreateTransactionFromMessageCommand request, CancellationToken cancellationToken) in /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Application/Features/AI/CreateTransactionFromMessageCommandHandler.cs:line 81
+2025-08-11 16:16:16.351 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 11955.1609 ms
+2025-08-11 16:16:38.393 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 16:16:38.405 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 16:16:38.405 +07:00 [INF] Hosting environment: Development
+2025-08-11 16:16:38.405 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 16:16:41.230 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 16:16:41.286 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 16:16:41.525 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:16:42.530 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:16:42.679 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:16:42.681 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:16:47.951 +07:00 [INF] Received HTTP response headers after 5264.3058ms - 200
+2025-08-11 16:16:47.957 +07:00 [INF] End processing HTTP request after 5282.6706ms - 200
+2025-08-11 16:16:56.782 +07:00 [INF] Successfully created transaction "ab2e3c79-c037-498c-bdc7-6f198c6083cb" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 16:16:56.827 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 15549.7377 ms
+2025-08-11 16:21:05.421 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 16:21:05.435 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 16:21:05.435 +07:00 [INF] Hosting environment: Development
+2025-08-11 16:21:05.435 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
+2025-08-11 16:21:14.406 +07:00 [WRN] Failed to determine the https port for redirect.
+2025-08-11 16:21:14.458 +07:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-08-11 16:21:14.677 +07:00 [INF] Processing AI transaction creation for user "e00a8847-1a6c-4932-8538-0520f79e70b0" with message: Đi chợ 200k
+2025-08-11 16:21:15.553 +07:00 [INF] Parsing transaction message for user "e00a8847-1a6c-4932-8538-0520f79e70b0": Đi chợ 200k
+2025-08-11 16:21:15.678 +07:00 [INF] Start processing HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:21:15.680 +07:00 [INF] Sending HTTP request POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?*
+2025-08-11 16:21:18.515 +07:00 [INF] Received HTTP response headers after 2829.7095ms - 200
+2025-08-11 16:21:18.521 +07:00 [INF] End processing HTTP request after 2847.3676ms - 200
+2025-08-11 16:21:18.734 +07:00 [INF] Successfully created transaction "c45504dd-118b-43fe-9adf-488403451064" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
+2025-08-11 16:21:18.769 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 4321.4695 ms

@@ -171,3 +171,8 @@
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/MailKit.dll
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/MimeKit.dll
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/appsettings.local.json
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/Microsoft.Extensions.Configuration.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/Microsoft.Extensions.Diagnostics.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/Microsoft.Extensions.Http.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/Newtonsoft.Json.dll

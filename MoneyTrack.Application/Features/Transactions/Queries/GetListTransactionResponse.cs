@@ -3,7 +3,7 @@ using MoneyTrack.Application.Responses;
 
 namespace MoneyTrack.Application.Features.Transactions.Queries;
 
-public class GetTransactionResponse : BaseResponse
+public class GetListTransactionResponse : BaseResponse
 {
     public List<GetTransactionDto> Transactions { get; set; }
 }

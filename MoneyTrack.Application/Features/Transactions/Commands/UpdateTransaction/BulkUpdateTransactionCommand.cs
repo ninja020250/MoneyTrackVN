@@ -4,7 +4,7 @@ using MoneyTrack.Application.Models.Transaction;
 
 namespace MoneyTrack.Application.Features.Transactions.Commands;
 
-public class BulkUpdateTransactionCommand:  IRequest<GetTransactionResponse>
+public class BulkUpdateTransactionCommand:  IRequest<GetListTransactionResponse>
 {
     public List<UpdateTransactionRequest> Transactions { get; set; }
 }

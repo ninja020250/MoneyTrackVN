@@ -10,13 +10,13 @@ public class GetTransactionQueryHandler(
     ITransactionRepository _transactionRepository,
     IMapper _mapper
 )
-    : IRequestHandler<GetTransactionsQuery, GetTransactionResponse>
+    : IRequestHandler<GetTransactionsQuery, GetListTransactionResponse>
 {
-    public async Task<GetTransactionResponse> Handle(GetTransactionsQuery request, CancellationToken cancellationToken)
+    public async Task<GetListTransactionResponse> Handle(GetTransactionsQuery request, CancellationToken cancellationToken)
     {
         var transactions = await _transactionRepository.GetListByUserIdAsync(new Guid(request.UserId));
 
-        var response = new GetTransactionResponse();
+        var response = new GetListTransactionResponse();
 
         response.Transactions = _mapper.Map<List<GetTransactionDto>>(transactions);
 

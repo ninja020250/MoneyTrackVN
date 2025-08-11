@@ -200,6 +200,10 @@
               "target": "Package",
               "version": "[4.13.0, )"
             },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
             "Microsoft.Extensions.Options.ConfigurationExtensions": {
               "target": "Package",
               "version": "[9.0.7, )"
@@ -207,6 +211,10 @@
             "MimeKit": {
               "target": "Package",
               "version": "[4.13.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

@@ -18,7 +18,7 @@ public class TransactionController(IMediator _mediator) : ControllerBase
     }
 
     [HttpPost("bulk")]
-    public async Task<ActionResult<GetTransactionResponse>> BulkCreateTransactions(
+    public async Task<ActionResult<GetListTransactionResponse>> BulkCreateTransactions(
         [FromBody] BulkCreateTransactionCommand request)
     {
         return await _mediator.Send(request);
@@ -32,7 +32,7 @@ public class TransactionController(IMediator _mediator) : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<GetTransactionResponse>> GetTransactionByUserId(
+    public async Task<ActionResult<GetListTransactionResponse>> GetTransactionByUserId(
         [FromQuery] string userId)
     {
         var query = new GetTransactionsQuery() { UserId = userId };
