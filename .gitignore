@@ -353,7 +353,6 @@ FodyWeavers.xsd
 appsettings.local.json
 appsettings.*.json
 !appsettings.json
-!appsettings.Development.json
 !appsettings.Production.json
 
 # Entity Framework
