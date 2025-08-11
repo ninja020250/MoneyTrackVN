@@ -35,7 +35,7 @@ public class GeminiService : IGeminiService
     }
 
 
-    public async Task<CreateTransactionRequest> ParseMessageToObjectAsync(string message, string language,
+    public async Task<CreateTransactionRequest> ParseTransactionAsync(string message, string language,
         string currencyUnit,
         IReadOnlyList<TransactionCategoryEntity> categories, Guid userId)
     {
@@ -190,7 +190,7 @@ public class GeminiService : IGeminiService
 
             if (transaction.ExpenseDate != null)
                 transaction.ExpenseDate = transaction.ExpenseDate.ToUniversalTime();
-            
+
             if (transaction.ExpenseDate == null)
                 transaction.ExpenseDate = DateTime.UtcNow;
 

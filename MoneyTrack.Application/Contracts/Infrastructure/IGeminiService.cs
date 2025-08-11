@@ -3,11 +3,18 @@ using MoneyTrack.Domain.Entities;
 
 namespace MoneyTrack.Application.Contracts.Infrastructure;
 
-public interface IGeminiService : ILLMService
+public interface IGeminiService
 {
-    Task<CreateTransactionRequest> ParseMessageToObjectAsync(string message, string language, string currencyUnit,
-        IReadOnlyList<TransactionCategoryEntity> categories, Guid userId);
+    Task<CreateTransactionRequest> ParseTransactionAsync(
+        string message,
+        string language,
+        string currencyUnit,
+        IReadOnlyList<TransactionCategoryEntity> categories,
+        Guid userId);
 
-    string BuildTransactionPrompt(string message, string language, string currencyUnit,
+    string BuildTransactionPrompt(
+        string message,
+        string language,
+        string currencyUnit,
         IReadOnlyList<TransactionCategoryEntity> categories);
 }

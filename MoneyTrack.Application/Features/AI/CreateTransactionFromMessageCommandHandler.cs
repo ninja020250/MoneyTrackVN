@@ -14,20 +14,20 @@ public class
     CreateTransactionFromMessageCommandHandler : IRequestHandler<CreateTransactionFromMessageCommand,
     CreateTransactionFromMessageCommandResponse>
 {
-    private readonly IGeminiService _geminiService;
+    private readonly ILLMService _llmService;
     private readonly ITransactionRepository _transactionRepository;
     private readonly ITransactionCategoryRepository _categoryRepository;
     private readonly IMapper _mapper;
     private readonly ILogger<CreateTransactionFromMessageCommandHandler> _logger;
 
     public CreateTransactionFromMessageCommandHandler(
-        IGeminiService geminiService,
+        ILLMService llmService,
         ITransactionRepository transactionRepository,
         ITransactionCategoryRepository categoryRepository,
         IMapper mapper,
         ILogger<CreateTransactionFromMessageCommandHandler> logger)
     {
-        _geminiService = geminiService;
+        _llmService = llmService;
         _transactionRepository = transactionRepository;
         _categoryRepository = categoryRepository;
         _mapper = mapper;
@@ -45,7 +45,7 @@ public class
             var categories = await _categoryRepository.ListAllAsync();
 
             // Parse message using Gemini AI
-            var transactionRequest = await _geminiService.ParseMessageToObjectAsync(
+            var transactionRequest = await _llmService.ParseTransactionAsync(
                 message: request.Message,
                 language: "Vietnamese",
                 currencyUnit: "VND",
