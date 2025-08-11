@@ -170,3 +170,4 @@
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/BouncyCastle.Cryptography.dll
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/MailKit.dll
 /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/MimeKit.dll
+/Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api/bin/Debug/net9.0/appsettings.local.json

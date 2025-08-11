@@ -2732,3 +2732,8 @@ MoneyTrack.Application.Features.Transactions.Commands.UpdateTransactionCommand -
 2025-08-10 23:27:58.366 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
 2025-08-10 23:28:01.348 +07:00 [WRN] Failed to determine the https port for redirect.
 2025-08-10 23:28:01.409 +07:00 [INF] HTTP GET / responded 404 in 0.5721 ms
+2025-08-11 14:04:41.001 +07:00 [INF] Application is shutting down...
+2025-08-11 14:04:45.933 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 14:04:45.947 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 14:04:45.947 +07:00 [INF] Hosting environment: Development
+2025-08-11 14:04:45.947 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
