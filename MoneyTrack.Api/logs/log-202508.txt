@@ -4969,3 +4969,7 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2025-08-11 17:03:39.277 +07:00 [INF] End processing HTTP request after 3985.0822ms - 200
 2025-08-11 17:03:39.508 +07:00 [INF] Successfully created transaction "5207d42e-3cef-44c9-918e-fe53e93e4561" for user "e00a8847-1a6c-4932-8538-0520f79e70b0"
 2025-08-11 17:03:39.550 +07:00 [INF] HTTP POST /api/ai/create-transaction responded 200 in 5746.4231 ms
+2025-08-11 17:05:48.956 +07:00 [INF] Now listening on: http://localhost:5274
+2025-08-11 17:05:48.968 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-11 17:05:48.969 +07:00 [INF] Hosting environment: Development
+2025-08-11 17:05:48.969 +07:00 [INF] Content root path: /Users/brian/Documents/Workspace/MoneyTrack/MoneyTrack.Api
