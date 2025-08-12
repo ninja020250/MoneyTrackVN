@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace MoneyTrack.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
@@ -18,4 +20,7 @@ public class ApiUsageEntity: AuditableEntity
 
     [Required]
     public int CallCount { get; set; }
+    
+    [JsonIgnore]
+    public UserEntity User { get; set; }
 }

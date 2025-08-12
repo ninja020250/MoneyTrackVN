@@ -97,14 +97,18 @@ public static class StartupExtensions
         app.MapControllers();
         app.UseCustomExceptionHandler();
 
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.MapScalarApiReference();
-            app.MapOpenApi();
-            app.UseSwagger();
-            app.UseSwaggerUI();
-        }
+        // // Configure the HTTP request pipeline.
+        // if (app.Environment.IsDevelopment())
+        // {
+        //     app.MapScalarApiReference();
+        //     app.MapOpenApi();
+        //     app.UseSwagger();
+        //     app.UseSwaggerUI();
+        // }
+        
+        app.MapOpenApi();
+        app.UseSwagger();
+        app.UseSwaggerUI();
 
         return app;
     }

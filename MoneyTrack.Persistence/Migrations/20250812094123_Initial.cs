@@ -14,26 +14,6 @@ namespace MoneyTrack.Persistence.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "api_usage",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
-                    ApiName = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
-                    CallDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    CallCount = table.Column<int>(type: "integer", nullable: false),
-                    CreatedBy = table.Column<string>(type: "text", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    LastModifiedBy = table.Column<string>(type: "text", nullable: true),
-                    LastModifiedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_api_usage", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "role",
                 columns: table => new
                 {
@@ -84,6 +64,32 @@ namespace MoneyTrack.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_user", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "api_usage",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ApiName = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
+                    CallDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CallCount = table.Column<int>(type: "integer", nullable: false),
+                    CreatedBy = table.Column<string>(type: "text", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    LastModifiedBy = table.Column<string>(type: "text", nullable: true),
+                    LastModifiedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_api_usage", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_api_usage_user_UserId",
+                        column: x => x.UserId,
+                        principalTable: "user",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -148,8 +154,8 @@ namespace MoneyTrack.Persistence.Migrations
                 columns: new[] { "Id", "CreatedBy", "CreatedDate", "DeletedAt", "Description", "LastModifiedBy", "LastModifiedDate", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("4c5d1784-f350-49da-861c-92c486b4b46c"), "System", new DateTime(2025, 8, 12, 9, 24, 13, 847, DateTimeKind.Utc).AddTicks(4810), null, "Guest role", null, null, "Guest" },
-                    { new Guid("af2b2a21-21e7-41a2-8727-c67816796132"), "System", new DateTime(2025, 8, 12, 9, 24, 13, 847, DateTimeKind.Utc).AddTicks(4520), null, "Administrator role", null, null, "Admin" }
+                    { new Guid("4c5d1784-f350-49da-861c-92c486b4b46c"), "System", new DateTime(2025, 8, 12, 9, 41, 23, 154, DateTimeKind.Utc).AddTicks(6060), null, "Guest role", null, null, "Guest" },
+                    { new Guid("af2b2a21-21e7-41a2-8727-c67816796132"), "System", new DateTime(2025, 8, 12, 9, 41, 23, 154, DateTimeKind.Utc).AddTicks(5820), null, "Administrator role", null, null, "Admin" }
                 });
 
             migrationBuilder.InsertData(

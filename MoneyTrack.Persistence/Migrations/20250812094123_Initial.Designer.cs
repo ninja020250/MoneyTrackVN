@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MoneyTrack.Persistence.Migrations
 {
     [DbContext(typeof(MoneyTrackDbContext))]
-    [Migration("20250812092414_Initial")]
+    [Migration("20250812094123_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -106,7 +106,7 @@ namespace MoneyTrack.Persistence.Migrations
                         {
                             Id = new Guid("af2b2a21-21e7-41a2-8727-c67816796132"),
                             CreatedBy = "System",
-                            CreatedDate = new DateTime(2025, 8, 12, 9, 24, 13, 847, DateTimeKind.Utc).AddTicks(4520),
+                            CreatedDate = new DateTime(2025, 8, 12, 9, 41, 23, 154, DateTimeKind.Utc).AddTicks(5820),
                             Description = "Administrator role",
                             Name = "Admin"
                         },
@@ -114,7 +114,7 @@ namespace MoneyTrack.Persistence.Migrations
                         {
                             Id = new Guid("4c5d1784-f350-49da-861c-92c486b4b46c"),
                             CreatedBy = "System",
-                            CreatedDate = new DateTime(2025, 8, 12, 9, 24, 13, 847, DateTimeKind.Utc).AddTicks(4810),
+                            CreatedDate = new DateTime(2025, 8, 12, 9, 41, 23, 154, DateTimeKind.Utc).AddTicks(6060),
                             Description = "Guest role",
                             Name = "Guest"
                         });
@@ -321,6 +321,17 @@ namespace MoneyTrack.Persistence.Migrations
                     b.ToTable("user_role", (string)null);
                 });
 
+            modelBuilder.Entity("MoneyTrack.Domain.Entities.ApiUsageEntity", b =>
+                {
+                    b.HasOne("MoneyTrack.Domain.Entities.UserEntity", "User")
+                        .WithMany("apiUsages")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("MoneyTrack.Domain.Entities.TransactionEntity", b =>
                 {
                     b.HasOne("MoneyTrack.Domain.Entities.TransactionCategoryEntity", "Category")
@@ -374,6 +385,8 @@ namespace MoneyTrack.Persistence.Migrations
                     b.Navigation("Transactions");
 
                     b.Navigation("UserRoles");
+
+                    b.Navigation("apiUsages");
                 });
 #pragma warning restore 612, 618
         }

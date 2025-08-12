@@ -20,4 +20,6 @@ public class UserEntity : AuditableEntity
     public ICollection<UserRoleEntity> UserRoles { get; set; } = new List<UserRoleEntity>();
     
     [JsonIgnore] public ICollection<TransactionEntity> Transactions { get; set; } = new List<TransactionEntity>();
+    
+    [JsonIgnore] public ICollection<ApiUsageEntity> apiUsages { get; set; } = new List<ApiUsageEntity>();
 }

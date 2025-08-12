@@ -11,5 +11,10 @@ public class ApiUsageConfiguration : IEntityTypeConfiguration<ApiUsageEntity>
         builder.ToTable("api_usage");
         builder.HasIndex(apiUsage => new { apiUsage.UserId, apiUsage.ApiName, apiUsage.CallDate })
             .IsUnique();
+
+        builder.HasOne(apiUsage => apiUsage.User)
+            .WithMany(user => user.apiUsages)
+            .HasForeignKey(apiUsage => apiUsage.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
