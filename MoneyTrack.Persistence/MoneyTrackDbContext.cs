@@ -16,6 +16,8 @@ public class MoneyTrackDbContext : DbContext
     public DbSet<TransactionCategoryEntity> TransactionCategory { get; set; }
 
     public DbSet<TransactionEntity> Transactions { get; set; }
+    
+    public DbSet<ApiUsageEntity> apiUsage { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

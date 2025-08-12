@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MoneyTrack.Api.Filters;
 using MoneyTrack.Api.Middleware;
 using MoneyTrack.Application;
 using MoneyTrack.Infrastructure;
@@ -74,6 +75,13 @@ public static class StartupExtensions
                     .AllowAnyHeader());
         });
 
+        builder.Services.Configure<Dictionary<string, int>>(
+            builder.Configuration.GetSection("ApiLimits"));
+        builder.Services.AddScoped<ApiUsageLimitFilter>();
+        // builder.Services.AddControllers(options =>
+        // {
+        //     options.Filters.Add<ApiUsageLimitFilter>();
+        // }); -> uncommment if want to check api usage for all controller.
         return builder.Build();
     }
 

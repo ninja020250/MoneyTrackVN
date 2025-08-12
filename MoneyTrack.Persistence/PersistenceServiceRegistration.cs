@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MoneyTrack.Application.Contracts.Infrastructure;
 using MoneyTrack.Application.Contracts.Persistence;
 using MoneyTrack.Persistence.Repositories;
 
@@ -24,6 +25,7 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IRoleRepository, RoleRepository>();
         services.AddScoped<ITransactionRepository, TransactionRepository>();
         services.AddScoped<ITransactionCategoryRepository, TransactionCategoryRepository>();
+        services.AddScoped<IApiUsageRepository, ApiUsageRepository>();
 
         return services;
     }
