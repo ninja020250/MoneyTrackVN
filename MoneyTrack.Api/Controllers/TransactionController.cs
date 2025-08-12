@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MoneyTrack.Application.Features.Transactions.Commands;
 using MoneyTrack.Application.Features.Transactions.Queries;
 using MoneyTrack.Application.Models.Transaction;
+using MoneyTrack.Application.Responses;
 using MoneyTrack.Domain.Entities;
 
 namespace MoneyTrack.Api.Controllers;
@@ -27,7 +28,7 @@ public class TransactionController(IMediator _mediator) : ControllerBase
     {
         return await _mediator.Send(request);
     }
-    
+
     [HttpPut("bulk-update")]
     [Authorize(Roles = $"{nameof(RoleName.Guest)}, {nameof(RoleName.Admin)}")]
     public async Task<ActionResult<GetListTransactionResponse>> BulkUpdateTransactions(
@@ -51,5 +52,21 @@ public class TransactionController(IMediator _mediator) : ControllerBase
     {
         var query = new GetTransactionsQuery() { UserId = userId };
         return await _mediator.Send(query);
+    }
+
+    [HttpDelete("{id}")]
+    [Authorize(Roles = $"{nameof(RoleName.Guest)}, {nameof(RoleName.Admin)}")]
+    public async Task<ActionResult<BaseResponse>> DeleteTransaction(Guid id)
+    {
+        var command = new DeleteTransactionCommand { Id = id };
+        return await _mediator.Send(command);
+    }
+
+    [HttpDelete("bulk-delete")]
+    [Authorize(Roles = $"{nameof(RoleName.Guest)}, {nameof(RoleName.Admin)}")]
+    public async Task<ActionResult<BaseResponse>> BulkDeleteTransactions(
+        [FromBody] BulkDeleteTransactionCommand request)
+    {
+        return await _mediator.Send(request);
     }
 }
