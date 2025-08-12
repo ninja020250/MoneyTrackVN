@@ -17,7 +17,5 @@ builder.Host.UseSerilog(
 var app = builder.ConfigurationService().ConfigurationPipeline();
 app.UseSerilogRequestLogging();
 // await app.ResetDatabaseAsync();
-var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-app.Urls.Add($"http://0.0.0.0:{port}");
 
 app.Run();

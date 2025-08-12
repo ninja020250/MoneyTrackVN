@@ -21,9 +21,11 @@ public static class StartupExtensions
             builder.Configuration
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.Production.json", optional: true,
+                    reloadOnChange: true)
                 .AddEnvironmentVariables();
         }
+
         builder.Services.AddApplicationServices();
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddPersistenceServices(builder.Configuration);
@@ -113,7 +115,13 @@ public static class StartupExtensions
         //     app.UseSwagger();
         //     app.UseSwaggerUI();
         // }
-        
+        if (!app.Environment.IsDevelopment())
+        {
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+            app.Urls.Add($"http://0.0.0.0:{port}");
+        }
+
+
         app.MapOpenApi();
         app.UseSwagger();
         app.UseSwaggerUI();
