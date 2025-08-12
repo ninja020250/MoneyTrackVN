@@ -26,10 +26,10 @@ public static class StartupExtensions
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true,
                     reloadOnChange: true)
-                .AddEnvironmentVariables(); 
+                .AddEnvironmentVariables();
+            Console.WriteLine($"Loaded JwtSettings:SecretKey: '{builder.Configuration["JwtSettings:SecretKey"]}'");
         }
 
-        builder.Configuration.AddEnvironmentVariables();
         builder.Services.AddApplicationServices();
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddPersistenceServices(builder.Configuration);
