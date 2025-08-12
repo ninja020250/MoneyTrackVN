@@ -22,7 +22,6 @@ public static class StartupExtensions
         {
             builder.WebHost.UseUrls($"http://0.0.0.0:{builder.Configuration.GetValue<int?>("PORT")}");
             builder.Configuration
-                .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true,
                     reloadOnChange: true)
@@ -36,6 +35,7 @@ public static class StartupExtensions
             Console.WriteLine($"Loaded ConnectionStrings:DefaultConnection: '{builder.Configuration["ConnectionStrings:DefaultConnection"]}'");
             Console.WriteLine($"builder.Environment.EnvironmentName: {builder.Environment.EnvironmentName}");
             Console.WriteLine($"loaded: Environment.GetEnvironmentVariable {Environment.GetEnvironmentVariable("JwtSettings__SecretKey")}");
+            
         }
 
         builder.Services.AddApplicationServices();
