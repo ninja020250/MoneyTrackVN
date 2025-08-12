@@ -20,7 +20,7 @@ public static class StartupExtensions
         Console.WriteLine($"builder.Environment.IsProduction(): {builder.Environment.IsProduction()}");
         if (builder.Environment.IsProduction())
         {
-            builder.WebHost.UseUrls($"http://0.0.0.0:{builder.Configuration.GetValue<int?>("PORT")}");
+            builder.WebHost.UseUrls($"http://0.0.0.0:{builder.Configuration.GetValue<int?>('PORT')}");
             builder.Configuration
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -28,6 +28,10 @@ public static class StartupExtensions
                     reloadOnChange: true)
                 .AddEnvironmentVariables();
             Console.WriteLine($"Loaded JwtSettings:SecretKey: '{builder.Configuration["JwtSettings:SecretKey"]}'");
+            Console.WriteLine($"Loaded JwtSettings:Issuer: '{builder.Configuration["JwtSettings:Issuer"]}'");
+            Console.WriteLine($"Loaded JwtSettings:Audience: '{builder.Configuration["JwtSettings:Audience"]}'");
+            Console.WriteLine($"Loaded ApiLimits: '{builder.Configuration["ApiLimits:MaxRequestsPerMinute"]}'");
+            Console.WriteLine($"Loaded ConnectionStrings:DefaultConnection: '{builder.Configuration["ConnectionStrings:DefaultConnection"]}'");
         }
 
         builder.Services.AddApplicationServices();
