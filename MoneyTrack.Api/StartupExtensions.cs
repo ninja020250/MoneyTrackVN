@@ -16,9 +16,17 @@ public static class StartupExtensions
 {
     public static WebApplication ConfigurationService(this WebApplicationBuilder builder)
     {
-        if (builder.Environment.IsProduction() && builder.Configuration.GetValue<int?>("PORT") is not null)
+        // Add configuration sources
+        Console.WriteLine($"builder.Environment.IsProduction(): {builder.Environment.IsProduction()}");
+        if (builder.Environment.IsProduction())
         {
             builder.WebHost.UseUrls($"http://0.0.0.0:{builder.Configuration.GetValue<int?>("PORT")}");
+            builder.Configuration
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true,
+                    reloadOnChange: true)
+                .AddEnvironmentVariables(); 
         }
 
         builder.Configuration.AddEnvironmentVariables();
