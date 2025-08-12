@@ -16,16 +16,13 @@ public static class StartupExtensions
 {
     public static WebApplication ConfigurationService(this WebApplicationBuilder builder)
     {
-        if (!builder.Environment.IsDevelopment())
-        {
-            builder.Configuration
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .AddJsonFile($"appsettings.Production.json", optional: true,
-                    reloadOnChange: true)
-                .AddEnvironmentVariables();
-        }
+        // if (!builder.Environment.IsDevelopment())
+        // {
+        //     builder.Configuration
+        //         .AddEnvironmentVariables();
+        // }
 
+        builder.Configuration.AddEnvironmentVariables();
         builder.Services.AddApplicationServices();
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddPersistenceServices(builder.Configuration);
