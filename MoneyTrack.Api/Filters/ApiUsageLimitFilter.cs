@@ -8,29 +8,18 @@ using MoneyTrack.Application.Features.ApiUsage;
 
 namespace MoneyTrack.Api.Filters;
 
-public class ApiUsageLimitFilter : IAsyncActionFilter
+public class ApiUsageLimitFilter(
+    IApiUsageRepository apiUsageRepository,
+    ICurrentUserService currentUserService,
+    IOptions<Dictionary<string, int>> apiLimits,
+    IMediator mediator)
+    : IAsyncActionFilter
 {
-    private readonly IMediator _mediator;
-    private readonly IDictionary<string, int> _apiLimits;
-    private readonly ICurrentUserService _currentUserService;
-    private readonly IApiUsageRepository _apiUsageRepository;
-
-    public ApiUsageLimitFilter(
-        IApiUsageRepository apiUsageRepository,
-        ICurrentUserService currentUserService,
-        IOptions<Dictionary<string, int>> apiLimits,
-        IMediator mediator
-    )
-    {
-        _apiUsageRepository = apiUsageRepository;
-        _currentUserService = currentUserService;
-        _apiLimits = apiLimits.Value;
-        _mediator = mediator;
-    }
+    private readonly IDictionary<string, int> _apiLimits = apiLimits.Value;
 
     public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
     {
-        var userId = _currentUserService.UserId;
+        var userId = currentUserService.UserId;
         if (userId is null)
         {
             await next();
@@ -41,11 +30,11 @@ public class ApiUsageLimitFilter : IAsyncActionFilter
 
         if (_apiLimits.TryGetValue(apiName, out var limit))
         {
-            var usage = await _apiUsageRepository.getTodayUsageByName(userId.Value, apiName);
+            var usage = await apiUsageRepository.getTodayUsageByName(userId.Value, apiName);
 
             if (usage != null && usage.CallCount >= limit)
             {
-                throw new BadRequestException("You have reached the daily limit for this API.");
+                throw new BadRequestException("API_LIMIT_EXCEEDED");
             }
 
             var result = await next();
@@ -53,7 +42,7 @@ public class ApiUsageLimitFilter : IAsyncActionFilter
             if (result.Exception == null || result.ExceptionHandled)
             {
                 var command = new UpsertApiUsageCommand() { ApiName = apiName, UserId = userId.Value };
-                _mediator.Send(command);
+                mediator.Send(command);
             }
         }
         else

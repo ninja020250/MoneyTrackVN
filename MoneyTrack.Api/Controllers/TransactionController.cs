@@ -28,7 +28,7 @@ public class TransactionController(IMediator _mediator) : ControllerBase
         return await _mediator.Send(request);
     }
     
-    [HttpPost("bulk-update")]
+    [HttpPut("bulk-update")]
     [Authorize(Roles = $"{nameof(RoleName.Guest)}, {nameof(RoleName.Admin)}")]
     public async Task<ActionResult<GetListTransactionResponse>> BulkUpdateTransactions(
         [FromBody] BulkUpdateTransactionCommand request)
