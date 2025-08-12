@@ -13,12 +13,12 @@ public class GeminiLLMAdapter : ILLMService
         _geminiService = geminiService;
     }
 
-    public async Task<CreateTransactionRequest> ParseTransactionAsync(
+    public async Task<AITransactionDto> ParseTransactionAsync(
         string message, string language, string currencyUnit,
-        IReadOnlyList<TransactionCategoryEntity> categories, Guid userId)
+        IReadOnlyList<TransactionCategoryEntity> categories)
     {
         return await _geminiService.ParseTransactionAsync(
-            message, language, currencyUnit, categories, userId);
+            message, language, currencyUnit, categories);
     }
 
     public string BuildTransactionPrompt(

@@ -35,13 +35,15 @@ public class GeminiService : IGeminiService
     }
 
 
-    public async Task<CreateTransactionRequest> ParseTransactionAsync(string message, string language,
+    public async Task<AITransactionDto> ParseTransactionAsync(
+        string message,
+        string language,
         string currencyUnit,
-        IReadOnlyList<TransactionCategoryEntity> categories, Guid userId)
+        IReadOnlyList<TransactionCategoryEntity> categories)
     {
         try
         {
-            _logger.LogInformation("Parsing transaction message for user {UserId}: {Message}", userId, message);
+            _logger.LogInformation("Parsing transaction message: {Message}", message);
 
             var prompt = BuildTransactionPrompt(message, language, currencyUnit, categories);
             var geminiRequest = CreateGeminiRequest(prompt);
@@ -49,12 +51,11 @@ public class GeminiService : IGeminiService
             var response = await CallGeminiApiAsync(geminiRequest);
             var parsedTransaction = ParseGeminiResponse(response);
 
-            return new CreateTransactionRequest
+            return new AITransactionDto()
             {
                 Description = parsedTransaction.Description,
                 Amount = parsedTransaction.Amount,
                 ExpenseDate = parsedTransaction.ExpenseDate,
-                UserId = userId,
                 CategoryCode = parsedTransaction.CategoryCode
             };
         }

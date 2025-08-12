@@ -5,5 +5,7 @@ namespace MoneyTrack.Application.Features.AI;
 
 public class CreateTransactionFromMessageCommandResponse: BaseResponse
 {
-    public GetTransactionDto? transaction { get; set; }
+    public AITransactionDto? transaction { get; set; }
+    
+    public bool HasBeenSaved { get; set; }
 }

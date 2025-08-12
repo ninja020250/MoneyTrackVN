@@ -6,5 +6,5 @@ namespace MoneyTrack.Application.Features.AI;
 
 public class CreateTransactionFromMessageCommand : CreateTransactionFromMessageRequest, IRequest<CreateTransactionFromMessageCommandResponse>
 {
-    public Guid UserId { get; set; }
+    public Guid? UserId { get; set; }
 }

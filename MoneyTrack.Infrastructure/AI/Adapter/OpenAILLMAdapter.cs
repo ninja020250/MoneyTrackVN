@@ -6,8 +6,8 @@ namespace MoneyTrack.Infrastructure.AI.Adapter;
 
 public class OpenAILLMAdapter : ILLMService
 {
-    public Task<CreateTransactionRequest> ParseTransactionAsync(string message, string language, string currencyUnit,
-        IReadOnlyList<TransactionCategoryEntity> categories, Guid userId)
+    public Task<AITransactionDto> ParseTransactionAsync(string message, string language, string currencyUnit,
+        IReadOnlyList<TransactionCategoryEntity> categories)
     {
         // TODO
         throw new NotImplementedException();

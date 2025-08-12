@@ -5,12 +5,11 @@ namespace MoneyTrack.Application.Contracts.Infrastructure;
 
 public interface IGeminiService
 {
-    Task<CreateTransactionRequest> ParseTransactionAsync(
+    Task<AITransactionDto> ParseTransactionAsync(
         string message,
         string language,
         string currencyUnit,
-        IReadOnlyList<TransactionCategoryEntity> categories,
-        Guid userId);
+        IReadOnlyList<TransactionCategoryEntity> categories);
 
     string BuildTransactionPrompt(
         string message,

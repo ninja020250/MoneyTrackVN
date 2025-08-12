@@ -1,38 +1,42 @@
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MoneyTrack.Application.Contracts.Persistence;
+using MoneyTrack.Application.Exceptions;
 using MoneyTrack.Application.Features.AI;
-using MoneyTrack.Application.Features.Auth.Commands;
-using MoneyTrack.Application.Features.Transactions.Queries;
 using MoneyTrack.Application.Models.AI;
+using MoneyTrack.Domain.Entities;
 
 namespace MoneyTrack.Api.Controllers;
 
 [Route("api/ai")]
 [ApiController]
-public class AIController(IMediator _mediator) : ControllerBase
+public class AIController(IMediator _mediator, ICurrentUserService _currentUserService) : ControllerBase
 {
-    private Guid GetUserIdFromClaims()
-    {
-        var userIdClaim = User.FindFirst("userId")?.Value;
-        if (string.IsNullOrEmpty(userIdClaim) || !Guid.TryParse(userIdClaim, out var userId))
-        {
-            throw new UnauthorizedAccessException("Invalid user token");
-        }
-        return userId;
-    }
-    
     [HttpPost("create-transaction")]
-    public async Task<ActionResult<CreateTransactionFromMessageCommandResponse>> Login([FromBody] CreateTransactionFromMessageRequest request)
+    [Authorize(Roles = $"{nameof(RoleName.Guest)}, {nameof(RoleName.Admin)}")]
+    public async Task<ActionResult<CreateTransactionFromMessageCommandResponse>> CreateTransaction(
+        [FromBody] CreateTransactionFromMessageRequest request)
     {
-        // var userId = GetUserIdFromClaims(); // Extract from JWT claims TODO
-    
+        var userId = _currentUserService.UserId
+                     ?? throw new UnauthenticatedException("User has no right!");
         var command = new CreateTransactionFromMessageCommand
         {
             Message = request.Message,
-            UserId = new Guid("e00a8847-1a6c-4932-8538-0520f79e70b0")
+            UserId = userId
         };
-    
         return await _mediator.Send(command);
     }
-    
+
+    [HttpPost("create-transaction/free")]
+    public async Task<ActionResult<CreateTransactionFromMessageCommandResponse>> CreateTransactionFree(
+        [FromBody] CreateTransactionFromMessageRequest request)
+    {
+        var command = new CreateTransactionFromMessageCommand
+        {
+            Message = request.Message,
+        };
+        var response = await _mediator.Send(command);
+        return response;
+    }
 }

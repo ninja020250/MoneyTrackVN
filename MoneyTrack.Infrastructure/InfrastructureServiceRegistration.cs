@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MoneyTrack.Application.Contracts.Infrastructure;
+using MoneyTrack.Application.Contracts.Persistence;
 using MoneyTrack.Application.Models;
 using MoneyTrack.Infrastructure.AI;
 using MoneyTrack.Infrastructure.AI.Adapter;
@@ -38,6 +39,8 @@ public static class InfrastructureServiceRegistration
         services.AddTransient<IJwtService, JwtService>();
 
         services.AddSingleton<IOtpService, OtpService>();
+        services.AddHttpContextAccessor();
+        services.AddScoped<ICurrentUserService, CurrentUserService>();
 
         return services;
     }
