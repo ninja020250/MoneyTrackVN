@@ -32,6 +32,7 @@ public static class StartupExtensions
             Console.WriteLine($"Loaded JwtSettings:Audience: '{builder.Configuration["JwtSettings:Audience"]}'");
             Console.WriteLine($"Loaded ApiLimits: '{builder.Configuration["ApiLimits:MaxRequestsPerMinute"]}'");
             Console.WriteLine($"Loaded ConnectionStrings:DefaultConnection: '{builder.Configuration["ConnectionStrings:DefaultConnection"]}'");
+            Console.WriteLine($"builder.Environment.EnvironmentName: {builder.Environment.EnvironmentName}");
         }
 
         builder.Services.AddApplicationServices();
