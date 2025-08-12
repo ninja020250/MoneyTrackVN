@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MoneyTrack.Persistence.Migrations
 {
     [DbContext(typeof(MoneyTrackDbContext))]
-    [Migration("20250807072309_convert_enum_role")]
-    partial class convert_enum_role
+    [Migration("20250812092414_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -106,7 +106,7 @@ namespace MoneyTrack.Persistence.Migrations
                         {
                             Id = new Guid("af2b2a21-21e7-41a2-8727-c67816796132"),
                             CreatedBy = "System",
-                            CreatedDate = new DateTime(2025, 8, 7, 7, 23, 9, 638, DateTimeKind.Utc).AddTicks(7290),
+                            CreatedDate = new DateTime(2025, 8, 12, 9, 24, 13, 847, DateTimeKind.Utc).AddTicks(4520),
                             Description = "Administrator role",
                             Name = "Admin"
                         },
@@ -114,7 +114,7 @@ namespace MoneyTrack.Persistence.Migrations
                         {
                             Id = new Guid("4c5d1784-f350-49da-861c-92c486b4b46c"),
                             CreatedBy = "System",
-                            CreatedDate = new DateTime(2025, 8, 7, 7, 23, 9, 638, DateTimeKind.Utc).AddTicks(7540),
+                            CreatedDate = new DateTime(2025, 8, 12, 9, 24, 13, 847, DateTimeKind.Utc).AddTicks(4810),
                             Description = "Guest role",
                             Name = "Guest"
                         });

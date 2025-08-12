@@ -20,8 +20,4 @@
         <ProjectReference Include="..\MoneyTrack.Domain\MoneyTrack.Domain.csproj"/>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Migrations\" />
-    </ItemGroup>
-
 </Project>

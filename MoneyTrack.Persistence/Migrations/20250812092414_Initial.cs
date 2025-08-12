@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MoneyTrack.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -25,7 +25,8 @@ namespace MoneyTrack.Persistence.Migrations
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "text", nullable: true),
-                    LastModifiedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    LastModifiedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -37,12 +38,13 @@ namespace MoneyTrack.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Name = table.Column<int>(type: "integer", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "text", nullable: true),
-                    LastModifiedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    LastModifiedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -70,14 +72,14 @@ namespace MoneyTrack.Persistence.Migrations
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Username = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     Email = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
-                    DeletedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     PasswordHash = table.Column<string>(type: "text", nullable: false),
                     RefreshToken = table.Column<string>(type: "text", nullable: true),
                     RefreshTokenExpiryTime = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "text", nullable: true),
-                    LastModifiedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    LastModifiedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -97,7 +99,8 @@ namespace MoneyTrack.Persistence.Migrations
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     LastModifiedBy = table.Column<string>(type: "text", nullable: true),
-                    LastModifiedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    LastModifiedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    DeletedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -142,11 +145,11 @@ namespace MoneyTrack.Persistence.Migrations
 
             migrationBuilder.InsertData(
                 table: "role",
-                columns: new[] { "Id", "CreatedBy", "CreatedDate", "Description", "LastModifiedBy", "LastModifiedDate", "Name" },
+                columns: new[] { "Id", "CreatedBy", "CreatedDate", "DeletedAt", "Description", "LastModifiedBy", "LastModifiedDate", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("4c5d1784-f350-49da-861c-92c486b4b46c"), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Guest role", null, null, 1 },
-                    { new Guid("af2b2a21-21e7-41a2-8727-c67816796132"), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Administrator role", null, null, 0 }
+                    { new Guid("4c5d1784-f350-49da-861c-92c486b4b46c"), "System", new DateTime(2025, 8, 12, 9, 24, 13, 847, DateTimeKind.Utc).AddTicks(4810), null, "Guest role", null, null, "Guest" },
+                    { new Guid("af2b2a21-21e7-41a2-8727-c67816796132"), "System", new DateTime(2025, 8, 12, 9, 24, 13, 847, DateTimeKind.Utc).AddTicks(4520), null, "Administrator role", null, null, "Admin" }
                 });
 
             migrationBuilder.InsertData(
