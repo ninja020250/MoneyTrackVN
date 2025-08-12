@@ -20,7 +20,7 @@ public static class StartupExtensions
         Console.WriteLine($"builder.Environment.IsProduction(): {builder.Environment.IsProduction()}");
         if (builder.Environment.IsProduction())
         {
-            builder.WebHost.UseUrls($"http://0.0.0.0:{builder.Configuration.GetValue<int?>('PORT')}");
+            builder.WebHost.UseUrls($"http://0.0.0.0:{builder.Configuration.GetValue<int?>("PORT")}");
             builder.Configuration
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
