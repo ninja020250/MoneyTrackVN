@@ -21,4 +21,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENV ASPNETCORE_ENVIRONMENT=Production
-CMD echo "JwtSettings__SecretKey=$JwtSettings__SecretKey" && echo "JwtSettings__SecretKey=$SECRET_KEY" && dotnet MoneyTrack.Api.dll
+CMD echo "JwtSettings__SecretKey=$JwtSettings__SecretKey" && echo "RAILWAY_SERVICE_ID=$RAILWAY_SERVICE_ID" && dotnet MoneyTrack.Api.dll
