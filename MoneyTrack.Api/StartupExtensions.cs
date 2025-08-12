@@ -16,11 +16,10 @@ public static class StartupExtensions
 {
     public static WebApplication ConfigurationService(this WebApplicationBuilder builder)
     {
-        // if (!builder.Environment.IsDevelopment())
-        // {
-        //     builder.Configuration
-        //         .AddEnvironmentVariables();
-        // }
+        if (builder.Environment.IsProduction() && builder.Configuration.GetValue<int?>("PORT") is not null)
+        {
+            builder.WebHost.UseUrls($"http://0.0.0.0:{builder.Configuration.GetValue<int?>("PORT")}");
+        }
 
         builder.Configuration.AddEnvironmentVariables();
         builder.Services.AddApplicationServices();
@@ -112,12 +111,6 @@ public static class StartupExtensions
         //     app.UseSwagger();
         //     app.UseSwaggerUI();
         // }
-        if (!app.Environment.IsDevelopment())
-        {
-            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
-            app.Urls.Add($"http://0.0.0.0:{port}");
-        }
-
 
         app.MapOpenApi();
         app.UseSwagger();
