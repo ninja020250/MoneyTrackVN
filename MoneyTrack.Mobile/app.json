@@ -2,7 +2,7 @@
   "expo": {
     "name": "MoneyTrack",
     "slug": "moneytrack",
-    "version": "1.0.0",
+    "version": "1.0.7",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -18,7 +18,7 @@
       }
     },
     "android": {
-      "runtimeVersion": "1.0.0",
+      "runtimeVersion": "1.0.1",
       "autoIncrement": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
@@ -79,7 +79,7 @@
         "projectId": "ff73d3bd-0b8d-4680-b78d-a81e361ff25b"
       }
     },
-    "runtimeVersion": "1.0.0",
+    "runtimeVersion": "1.0.5",
     "updates": {
       "url": "https://u.expo.dev/ff73d3bd-0b8d-4680-b78d-a81e361ff25b"
     },

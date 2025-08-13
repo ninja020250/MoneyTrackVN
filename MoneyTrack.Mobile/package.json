@@ -2,14 +2,16 @@
   "name": "MoneyTrack",
   "slug": "moneytrack",
   "main": "expo-router/entry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "expo start",
     "android": "DARK_MODE=light expo start --android",
     "ios": "DARK_MODE=light expo start --ios",
     "web": "DARK_MODE=light expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "bump:ios": "node scripts/bump-version.js && eas build --platform ios",
+    "deploy:ios": "eas submit --platform ios"
   },
   "jest": {
     "preset": "jest-expo"
