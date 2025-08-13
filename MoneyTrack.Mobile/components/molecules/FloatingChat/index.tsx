@@ -3,17 +3,12 @@ import { Icon } from "@/components/ui/icon";
 import { Input, InputField } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { VStack } from "@/components/ui/vstack";
-import { ArrowUpIcon, Plus, SparklesIcon } from "lucide-react-native";
+import { ExpoSpeechRecognitionModule, useSpeechRecognitionEvent } from "expo-speech-recognition";
+import { ArrowUpIcon, CheckIcon, MicIcon, Plus, SparklesIcon, XIcon } from "lucide-react-native";
 import { useEffect, useRef, useState } from "react";
-import {
-  Animated,
-  Keyboard,
-  KeyboardAvoidingView,
-  Platform,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-} from "react-native";
+import { Animated, Keyboard, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, View } from "react-native";
+import FloatingChatButton from "./FloatingChatButton";
+import VoiceWave from "./VoiceWave";
 
 export type FloatingChatProps = {
   isLoading?: boolean;
@@ -32,6 +27,8 @@ export default function FloatingChat({
   const inputRef = useRef(null);
   const [message, setMessage] = useState("");
   const fadeAnim = useRef(new Animated.Value(0)).current;
+  const [isRecording, setIsRecording] = useState(false);
+  const [speechPermissionGranted, setSpeechPermissionGranted] = useState(false);
 
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener("keyboardDidShow", (event) => {
@@ -48,6 +45,30 @@ export default function FloatingChat({
       keyboardDidHideListener.remove();
     };
   }, []);
+
+  // Speech recognition event handlers
+  useSpeechRecognitionEvent("start", () => {
+    setIsRecording(true);
+  });
+
+  useSpeechRecognitionEvent("end", () => {
+    setIsRecording(false);
+  });
+
+  useSpeechRecognitionEvent("result", (event) => {
+    const transcript = event.results[0]?.transcript;
+    if (transcript) {
+      setMessage(transcript);
+      if (transcript.length > 50 && isRecording) {
+        ExpoSpeechRecognitionModule.stop();
+      }
+    }
+  });
+
+  useSpeechRecognitionEvent("error", (event) => {
+    console.log("Speech recognition error:", event.error, event.message);
+    setIsRecording(false);
+  });
 
   const fadeIn = () => {
     Animated.timing(fadeAnim, {
@@ -72,6 +93,34 @@ export default function FloatingChat({
       Keyboard.dismiss();
     } else {
       inputRef.current?.focus();
+    }
+  };
+
+  const handleSpeechRecognition = async () => {
+    if (isRecording) {
+      // Stop recording
+      ExpoSpeechRecognitionModule.stop();
+    } else {
+      // Request permissions and start recording
+      try {
+        const result = await ExpoSpeechRecognitionModule.requestPermissionsAsync();
+        if (!result.granted) {
+          console.warn("Speech recognition permissions not granted", result);
+          return;
+        }
+        setSpeechPermissionGranted(true);
+
+        // Start speech recognition with Vietnamese language
+        ExpoSpeechRecognitionModule.start({
+          lang: "vi-VN", // Vietnamese language
+          interimResults: true,
+          continuous: false,
+          maxAlternatives: 1,
+        });
+      } catch (error) {
+        console.error("Error starting speech recognition:", error);
+        setIsRecording(false);
+      }
     }
   };
 
@@ -109,29 +158,51 @@ export default function FloatingChat({
                 placeholder={placeholder}
               />
             </Input>
-            <HStack className="w-full mt-1 gap-2 px-2">
-              <TouchableOpacity
-                onPress={onPressCreate}
-                className="w-10 h-10 rounded-full bg-white items-center justify-center border border-neutral-400"
-              >
-                <Plus size={24} color="black" />
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                onPress={handleSubmitMessage}
-                className="ml-auto w-10 h-10 rounded-full bg-primary-900 items-center justify-center border border-neutral-900"
-              >
-                {!isLoading && (
-                  <View>
-                    {keyboardOffset <= 0 && <Icon as={SparklesIcon} size="xl" className="text-purple-50" />}
-                    <Animated.View style={{ opacity: fadeAnim }}>
-                      {keyboardOffset > 0 && <Icon as={ArrowUpIcon} size="xl" className="text-purple-50" />}
-                    </Animated.View>
-                  </View>
-                )}
-                {isLoading && <Spinner size="small" className="text-purple-50" />}
-              </TouchableOpacity>
-            </HStack>
+            {!isRecording && (
+              <HStack className="w-full mt-1 gap-2 px-2 justify-between">
+                <FloatingChatButton onPress={onPressCreate} color="white">
+                  <Plus size={24} color="black" />
+                </FloatingChatButton>
+                <HStack className="gap-4">
+                  <FloatingChatButton color="black" onPress={handleSpeechRecognition}>
+                    {!isLoading && (
+                      <View>{keyboardOffset <= 0 && <Icon as={MicIcon} size="xl" className="text-purple-50" />}</View>
+                    )}
+                    {isLoading && <Spinner size="small" className="text-purple-50" />}
+                  </FloatingChatButton>
+                  <FloatingChatButton color="black" onPress={handleSubmitMessage}>
+                    {!isLoading && (
+                      <View>
+                        {keyboardOffset <= 0 && <Icon as={SparklesIcon} size="xl" className="text-purple-50" />}
+                        <Animated.View style={{ opacity: fadeAnim }}>
+                          {keyboardOffset > 0 && <Icon as={ArrowUpIcon} size="xl" className="text-purple-50" />}
+                        </Animated.View>
+                      </View>
+                    )}
+                    {isLoading && <Spinner size="small" className="text-purple-50" />}
+                  </FloatingChatButton>
+                </HStack>
+              </HStack>
+            )}
+            {isRecording && (
+              <HStack className="w-full mt-1 gap-2 px-2 justify-between">
+                <FloatingChatButton
+                  onPress={() => {
+                    handleSpeechRecognition();
+                    setTimeout(() => {
+                      setMessage("");
+                    }, 500);
+                  }}
+                  color="white"
+                >
+                  <XIcon size={24} color="black" />
+                </FloatingChatButton>
+                <VoiceWave isRecording={isRecording} />
+                <FloatingChatButton onPress={handleSpeechRecognition} color="black">
+                  <CheckIcon size={24} color="white" />
+                </FloatingChatButton>
+              </HStack>
+            )}
           </VStack>
         </View>
       </KeyboardAvoidingView>
