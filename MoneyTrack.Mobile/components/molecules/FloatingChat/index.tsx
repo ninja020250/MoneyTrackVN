@@ -164,11 +164,8 @@ export default function FloatingChat({
                   <Plus size={24} color="black" />
                 </FloatingChatButton>
                 <HStack className="gap-4">
-                  <FloatingChatButton color="black" onPress={handleSpeechRecognition}>
-                    {!isLoading && (
-                      <View>{keyboardOffset <= 0 && <Icon as={MicIcon} size="xl" className="text-purple-50" />}</View>
-                    )}
-                    {isLoading && <Spinner size="small" className="text-purple-50" />}
+                  <FloatingChatButton color="black" onPress={handleSpeechRecognition} disabled={isLoading}>
+                    <Icon as={MicIcon} size="xl" className="text-purple-50" />
                   </FloatingChatButton>
                   <FloatingChatButton color="black" onPress={handleSubmitMessage}>
                     {!isLoading && (

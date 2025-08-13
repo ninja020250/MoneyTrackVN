@@ -5,6 +5,7 @@ export type FloatingChatButtonProps = {
   onPress: () => void;
   children: ReactNode;
   color?: "white" | "black";
+  disabled?: boolean;
 };
 
 const colors = {
@@ -12,9 +13,15 @@ const colors = {
   black: "bg-primary-900 border border-neutral-900",
 };
 
-export const FloatingChatButton = ({ onPress, children, color = "white" }) => {
+export const FloatingChatButton = ({
+  onPress,
+  children,
+  color = "white",
+  disabled = false,
+}: FloatingChatButtonProps) => {
   return (
     <TouchableOpacity
+      disabled={disabled}
       onPress={onPress}
       className={`w-10 h-10 rounded-full  items-center justify-center ${colors[color]}`}
     >

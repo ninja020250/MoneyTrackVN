@@ -2,7 +2,7 @@
   "expo": {
     "name": "MoneyTrack",
     "slug": "moneytrack",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -61,7 +61,9 @@
         {
           "microphonePermission": "Allow $(PRODUCT_NAME) to use the microphone for speech recognition.",
           "speechRecognitionPermission": "Allow $(PRODUCT_NAME) to use speech recognition.",
-          "androidSpeechServicePackages": ["com.google.android.googlequicksearchbox"]
+          "androidSpeechServicePackages": [
+            "com.google.android.googlequicksearchbox"
+          ]
         }
       ],
       "expo-font",
