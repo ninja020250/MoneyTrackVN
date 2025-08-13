@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>468229160765-5bvf4hqlutgri6lj21asnli45lid0bfd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.468229160765-5bvf4hqlutgri6lj21asnli45lid0bfd</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDtn0na2rIMfag8kSq63ZVjTfpHnJX_gqM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>468229160765</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.moneytrack.moneytrack</string>
+	<key>PROJECT_ID</key>
+	<string>moneytrack-d3e22</string>
+	<key>STORAGE_BUCKET</key>
+	<string>moneytrack-d3e22.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:468229160765:ios:88acf1eb513ef765a60f54</string>
+</dict>
+</plist>

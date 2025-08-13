@@ -12,27 +12,20 @@ using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace MoneyTrack.Infrastructure.AI;
 
-public class GeminiService : IGeminiService
+public class GeminiService(
+    HttpClient httpClient,
+    IOptions<GeminiSettings> settings,
+    ILogger<GeminiService> logger
+)
+    : IGeminiService
 {
-    private readonly HttpClient _httpClient;
-    private readonly GeminiSettings _settings;
-    private readonly ILogger<GeminiService> _logger;
-    private readonly JsonSerializerOptions _jsonOptions;
+    private readonly GeminiSettings _settings = settings.Value;
 
-    public GeminiService(
-        HttpClient httpClient,
-        IOptions<GeminiSettings> settings,
-        ILogger<GeminiService> logger)
+    private readonly JsonSerializerOptions _jsonOptions = new()
     {
-        _httpClient = httpClient;
-        _settings = settings.Value;
-        _logger = logger;
-        _jsonOptions = new JsonSerializerOptions
-        {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            WriteIndented = true
-        };
-    }
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        WriteIndented = true
+    };
 
 
     public async Task<AITransactionDto> ParseTransactionAsync(
@@ -43,7 +36,7 @@ public class GeminiService : IGeminiService
     {
         try
         {
-            _logger.LogInformation("Parsing transaction message: {Message}", message);
+            logger.LogInformation("Parsing transaction message: {Message}", message);
 
             var prompt = BuildTransactionPrompt(message, language, currencyUnit, categories);
             var geminiRequest = CreateGeminiRequest(prompt);
@@ -61,7 +54,7 @@ public class GeminiService : IGeminiService
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error parsing transaction message: {Message}", message);
+            logger.LogError(ex, "Error parsing transaction message: {Message}", message);
             throw new InvalidOperationException("Failed to parse transaction message using AI", ex);
         }
     }
@@ -102,11 +95,6 @@ public class GeminiService : IGeminiService
             
             Message to parse: {message}
             ";
-    }
-
-    public Task<object> ParseMessageToObjectAsync(string message)
-    {
-        throw new NotImplementedException();
     }
 
     private object CreateGeminiRequest(string prompt)
@@ -151,14 +139,14 @@ public class GeminiService : IGeminiService
 
         var url = _settings.ToString();
 
-        _httpClient.Timeout = TimeSpan.FromSeconds(_settings.TimeoutSeconds);
+        httpClient.Timeout = TimeSpan.FromSeconds(_settings.TimeoutSeconds);
 
-        var response = await _httpClient.PostAsync(url, content);
+        var response = await httpClient.PostAsync(url, content);
 
         if (!response.IsSuccessStatusCode)
         {
             var errorContent = await response.Content.ReadAsStringAsync();
-            _logger.LogError("Gemini API error: {StatusCode} - {Content}", response.StatusCode, errorContent);
+            logger.LogError("Gemini API error: {StatusCode} - {Content}", response.StatusCode, errorContent);
             throw new HttpRequestException($"Gemini API call failed: {response.StatusCode}");
         }
 
@@ -199,7 +187,7 @@ public class GeminiService : IGeminiService
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error parsing Gemini response: {Response}", response);
+            logger.LogError(ex, "Error parsing Gemini response: {Response}", response);
             throw new InvalidOperationException("Failed to parse Gemini AI response", ex);
         }
     }
