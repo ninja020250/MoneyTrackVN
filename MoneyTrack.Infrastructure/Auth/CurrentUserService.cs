@@ -21,4 +21,13 @@ public class CurrentUserService: ICurrentUserService
             return new Guid(userIdClaim);
         }
     }
+
+    public string Email
+    {
+        get
+        {
+            var emailClaim = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.Email)?.Value;
+            return emailClaim;
+        }
+    }
 }

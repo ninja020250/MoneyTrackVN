@@ -20,7 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyTrack.Infrastructure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyTrack.Api", "MoneyTrack.Api\MoneyTrack.Api.csproj", "{589813A4-E151-417C-BBCF-577188440923}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyTrack.Application.UnitTests", "MoneyTrack.Application.UnitTests\MoneyTrack.Application.UnitTests.csproj", "{FCEBC07D-E3A7-4D6D-A9B4-0CCB6D2F940B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyTrack.Application.UnitTests", "MoneyTrack.Application.UnitTests\MoneyTrack.Application.UnitTests.csproj", "{4A30FAF6-7B6E-4411-B6AA-C4E8B65B1EFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,7 +36,7 @@ Global
 		{2604FC03-D5E9-403F-A8D4-6AE2C3F63F5D} = {C22813BD-8A85-4D92-9C4B-8A1534C48479}
 		{9346FFA2-8816-45CA-A005-C5B2A53A1817} = {C22813BD-8A85-4D92-9C4B-8A1534C48479}
 		{589813A4-E151-417C-BBCF-577188440923} = {8BA8745B-20EF-4712-A900-1382C1EBAC45}
-		{FCEBC07D-E3A7-4D6D-A9B4-0CCB6D2F940B} = {750661BC-D647-4908-BF38-3F0D12D27FF4}
+		{4A30FAF6-7B6E-4411-B6AA-C4E8B65B1EFE} = {750661BC-D647-4908-BF38-3F0D12D27FF4}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4BDA6B9C-1664-4F23-803D-94033D29FE85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -59,9 +59,9 @@ Global
 		{589813A4-E151-417C-BBCF-577188440923}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{589813A4-E151-417C-BBCF-577188440923}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{589813A4-E151-417C-BBCF-577188440923}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FCEBC07D-E3A7-4D6D-A9B4-0CCB6D2F940B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FCEBC07D-E3A7-4D6D-A9B4-0CCB6D2F940B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FCEBC07D-E3A7-4D6D-A9B4-0CCB6D2F940B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FCEBC07D-E3A7-4D6D-A9B4-0CCB6D2F940B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A30FAF6-7B6E-4411-B6AA-C4E8B65B1EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A30FAF6-7B6E-4411-B6AA-C4E8B65B1EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A30FAF6-7B6E-4411-B6AA-C4E8B65B1EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A30FAF6-7B6E-4411-B6AA-C4E8B65B1EFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

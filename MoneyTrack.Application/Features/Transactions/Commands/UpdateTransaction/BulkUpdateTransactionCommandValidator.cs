@@ -10,8 +10,7 @@ public class BulkUpdateTransactionCommandValidator: AbstractValidator<BulkUpdate
             .NotNull()
             .WithMessage("Transactions list cannot be null.");
 
-        RuleFor(x => x.Transactions)
-            .NotEmpty()
-            .WithMessage("At least one transaction is required.");
+        // Allow empty lists for bulk updates - this is a valid scenario
+        // Individual transaction validation will be handled separately
     }
 }

@@ -63,7 +63,7 @@ public class BulkUpdateTransactionCommandHandler(
             {
                 var transactionToUpdate = await _transactionRepository.GetByIdAsync(transactionRequest.Id);
 
-                _mapper.Map(transactionRequest, transactionToUpdate, typeof(UpdateTransactionCommand), typeof(TransactionEntity));
+                _mapper.Map(transactionRequest, transactionToUpdate, typeof(UpdateTransactionRequest), typeof(TransactionEntity));
                 
                 var category = await _transactionCategoryRepository.GetByCodeAsync(transactionRequest.CategoryCode);
                 transactionToUpdate.Category = category;
@@ -82,7 +82,13 @@ public class BulkUpdateTransactionCommandHandler(
         // Set response properties
         response.Transactions = updatedTransaction;
 
-        if (validationErrors.Any())
+        // Handle empty transaction list case
+        if (request.Transactions.Count == 0)
+        {
+            response.Success = true;
+            response.Message = "No transactions to update.";
+        }
+        else if (validationErrors.Any())
         {
             response.Success = false;
             response.ValidationErrors = validationErrors;

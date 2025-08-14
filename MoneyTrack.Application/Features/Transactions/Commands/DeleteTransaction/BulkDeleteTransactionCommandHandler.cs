@@ -10,54 +10,56 @@ public class BulkDeleteTransactionCommandHandler(
 {
     public async Task<BaseResponse> Handle(BulkDeleteTransactionCommand request, CancellationToken cancellationToken)
     {
+        // Check for cancellation at the start
+        cancellationToken.ThrowIfCancellationRequested();
+        
         var response = new BaseResponse();
         var deletedCount = 0;
         var notFoundIds = new List<Guid>();
         var errors = new List<string>();
 
+        // Handle empty list case
+        if (request.TransactionIds == null || !request.TransactionIds.Any())
+        {
+            response.Success = true;
+            response.Message = "No transactions to delete.";
+            return response;
+        }
+
         foreach (var transactionId in request.TransactionIds)
         {
+            // Check for cancellation during processing
+            cancellationToken.ThrowIfCancellationRequested();
+            
             try
             {
+                // Check for empty GUID
+                if (transactionId == Guid.Empty)
+                {
+                    throw new Exception($"Invalid transaction ID: {transactionId}");
+                }
+                
                 var transaction = await _transactionRepository.GetByIdAsync(transactionId);
                 if (transaction == null)
                 {
-                    notFoundIds.Add(transactionId);
-                    continue;
+                    throw new Exception($"Transaction with ID {transactionId} not found.");
                 }
 
                 await _transactionRepository.DeleteAsync(transaction);
                 deletedCount++;
             }
+            catch (OperationCanceledException)
+            {
+                throw; // Re-throw cancellation exceptions
+            }
             catch (Exception ex)
             {
-                errors.Add($"Failed to delete transaction {transactionId}: {ex.Message}");
+                throw new Exception($"Failed to delete transaction {transactionId}: {ex.Message}", ex);
             }
         }
 
-        if (errors.Count > 0 || notFoundIds.Count > 0)
-        {
-            response.Success = deletedCount > 0;
-            var errorMessages = new List<string>();
-
-            if (notFoundIds.Count > 0)
-            {
-                errorMessages.Add($"Transactions not found: {string.Join(", ", notFoundIds)}");
-            }
-
-            if (errors.Count > 0)
-            {
-                errorMessages.AddRange(errors);
-            }
-
-            response.Message = $"Deleted {deletedCount} out of {request.TransactionIds.Count} transactions. Errors: {string.Join("; ", errorMessages)}";
-        }
-        else
-        {
-            response.Success = true;
-            response.Message = $"Successfully deleted {deletedCount} transactions.";
-        }
-
+        response.Success = true;
+        response.Message = $"Successfully deleted {deletedCount} transactions.";
         return response;
     }
 }

@@ -1,12 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MoneyTrack.Application.Contracts.Persistence;
 using MoneyTrack.Domain.Entities;
 
 namespace MoneyTrack.Persistence;
 
 public class MoneyTrackDbContext : DbContext
 {
+    private readonly ICurrentUserService _currentUserService;
+    
     public MoneyTrackDbContext(DbContextOptions<MoneyTrackDbContext> options) : base(options)
     {
+    }
+    
+    public MoneyTrackDbContext(DbContextOptions<MoneyTrackDbContext> options, ICurrentUserService currentUserService) : base(options)
+    {
+        _currentUserService = currentUserService;
     }
 
     public DbSet<UserEntity> Users { get; set; }
@@ -31,9 +39,11 @@ public class MoneyTrackDbContext : DbContext
             {
                 case EntityState.Added:
                     entry.Entity.CreatedDate = DateTime.UtcNow;
+                    entry.Entity.CreatedBy = _currentUserService.Email;
                     break;
                 case EntityState.Modified:
                     entry.Entity.LastModifiedDate = DateTime.UtcNow;
+                    entry.Entity.LastModifiedBy = _currentUserService.Email;
                     break;
             }
 

@@ -22,6 +22,8 @@ public class MappingProfile : Profile
         CreateMap<CreateTransactionRequest, CreateTransactionCommand>();
         CreateMap<CreateTransactionRequest, TransactionEntity>();
         CreateMap<UpdateTransactionCommand, TransactionEntity>();
+        CreateMap<UpdateTransactionRequest, UpdateTransactionCommand>();
+        CreateMap<UpdateTransactionRequest, TransactionEntity>();
         CreateMap<TransactionEntity, GetTransactionDto>();
         CreateMap<TransactionCategoryEntity, GetCategoryDto>();
     }
