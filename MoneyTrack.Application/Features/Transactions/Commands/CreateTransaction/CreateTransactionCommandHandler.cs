@@ -1,4 +1,3 @@
-using System.Transactions;
 using AutoMapper;
 using MediatR;
 using MoneyTrack.Application.Contracts.Persistence;
@@ -17,19 +16,7 @@ public class CreateTransactionCommandHandler(
     public async Task<TransactionResponse> Handle(CreateTransactionCommand request,
         CancellationToken cancellationToken)
     {
-        var validator = new CreateTransactionCommandValidator(_transactionCategory);
         var createTransactionCommandResponse = new TransactionResponse();
-        var validationResult = await validator.ValidateAsync(request);
-
-        if (validationResult.Errors.Count > 0)
-        {
-            createTransactionCommandResponse.Success = false;
-            createTransactionCommandResponse.ValidationErrors = new List<string>();
-            foreach (var validationError in validationResult.Errors)
-                createTransactionCommandResponse.ValidationErrors.Add(validationError.ErrorMessage);
-
-            return createTransactionCommandResponse;
-        }
 
         var transaction = _mapper.Map<TransactionEntity>(request);
         var category = await _transactionCategory.GetByCodeAsync(request.CategoryCode);

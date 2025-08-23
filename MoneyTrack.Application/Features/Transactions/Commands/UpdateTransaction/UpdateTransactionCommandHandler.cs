@@ -16,20 +16,10 @@ public class UpdateTransactionCommandHandler(
     public async Task<TransactionResponse> Handle(UpdateTransactionCommand request,
         CancellationToken cancellationToken)
     {
-        var validator = new UpdateTransactionCommandValidator(_transactionRepository, _transactionCategoryRepository);
+       
         var updateTransactionCommandResponse = new TransactionResponse();
-        var validationResult = await validator.ValidateAsync(request);
 
-        if (validationResult.Errors.Count > 0)
-        {
-            updateTransactionCommandResponse.Success = false;
-            updateTransactionCommandResponse.ValidationErrors = new List<string>();
-            foreach (var validationError in validationResult.Errors)
-                updateTransactionCommandResponse.ValidationErrors.Add(validationError.ErrorMessage);
-
-            return updateTransactionCommandResponse;
-        }
-
+        
         var transactionToUpdate = await _transactionRepository.GetByIdAsync(request.Id);
 
         _mapper.Map(request, transactionToUpdate, typeof(UpdateTransactionCommand), typeof(TransactionEntity));

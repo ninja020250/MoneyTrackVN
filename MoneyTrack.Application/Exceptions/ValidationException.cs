@@ -10,5 +10,9 @@ public class ValidationException : Exception
         foreach (var validationError in validationResult.Errors) ValidationErrors.Add(validationError.ErrorMessage);
     }
 
+    public ValidationException()
+    {
+    }
+
     public List<string> ValidationErrors { get; set; }
 }

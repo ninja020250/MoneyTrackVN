@@ -13,7 +13,7 @@ public class CreateTransactionCommandValidator
     {
         _transactionCategory = transactionCategory;
 
-        RuleFor(t => t.Amount).NotEmpty();
+        RuleFor(t => t.Amount).NotEmpty().GreaterThan(0);
         RuleFor(t => t.UserId).NotEmpty();
         RuleFor(t => t.ExpenseDate).NotEmpty();
         RuleFor(t => t.Description).NotEmpty();

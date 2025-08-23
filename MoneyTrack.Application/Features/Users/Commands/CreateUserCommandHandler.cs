@@ -14,17 +14,7 @@ public class CreateUserCommandHandler(IUserRepository _userRepository, IMapper _
     {
         var user = _mapper.Map<UserEntity>(request);
         var createUserCommandResponse = new CreateUserCommandResponse();
-        var validator = new CreateUserCommandValidator();
-        var validationResult = await validator.ValidateAsync(request);
-
-        if (validationResult.Errors.Count > 0)
-        {
-            createUserCommandResponse.Success = false;
-            createUserCommandResponse.ValidationErrors = new List<string>();
-            foreach (var validationError in validationResult.Errors)
-                createUserCommandResponse.ValidationErrors.Add(validationError.ErrorMessage);
-        }
-
+      
         if (createUserCommandResponse.Success) user = await _userRepository.AddAsync(user);
 
         var email = new Email

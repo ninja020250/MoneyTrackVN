@@ -7,5 +7,4 @@ public class CreateTransactionFromMessageCommandResponse: BaseResponse
 {
     public AITransactionDto? transaction { get; set; }
     
-    public bool HasBeenSaved { get; set; }
 }

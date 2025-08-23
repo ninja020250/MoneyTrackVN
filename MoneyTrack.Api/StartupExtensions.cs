@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using MoneyTrack.Api.Filters;
 using MoneyTrack.Api.Middleware;
 using MoneyTrack.Application;
 using MoneyTrack.Infrastructure;
@@ -41,6 +40,7 @@ public static class StartupExtensions
         builder.Services.AddApplicationServices();
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddPersistenceServices(builder.Configuration);
+        
         builder.Services.AddControllers();
 
         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -99,7 +99,6 @@ public static class StartupExtensions
 
         builder.Services.Configure<Dictionary<string, int>>(
             builder.Configuration.GetSection("ApiLimits"));
-        builder.Services.AddScoped<ApiUsageLimitFilter>();
         // builder.Services.AddControllers(options =>
         // {
         //     options.Filters.Add<ApiUsageLimitFilter>();

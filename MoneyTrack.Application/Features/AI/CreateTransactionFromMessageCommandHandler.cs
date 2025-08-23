@@ -64,58 +64,22 @@ public class
                 };
             }
 
-            if (request.UserId is not null)
+            // // Map to DTO
+            var transactionDto = new GetTransactionDto()
             {
-                // Create transaction entity
-                var transaction = new TransactionEntity
-                {
-                    Id = Guid.NewGuid(),
-                    Description = aiTransactionDto.Description,
-                    Amount = aiTransactionDto.Amount,
-                    ExpenseDate = aiTransactionDto.ExpenseDate,
-                    UserId = request.UserId.Value,
-                    Category = category,
-                    CategoryId = category.Id,
-                    CreatedBy = "Gemini"
-                };
+                Id = Guid.NewGuid(),
+                Description = aiTransactionDto.Description,
+                Amount = aiTransactionDto.Amount,
+                ExpenseDate = aiTransactionDto.ExpenseDate,
+            };
+            transactionDto.Category = _mapper.Map<GetCategoryDto>(category);
 
-                // Save transaction
-                var createdTransaction = await _transactionRepository.AddAsync(transaction);
-
-                // // Map to DTO
-                var transactionDto = _mapper.Map<GetTransactionDto>(createdTransaction);
-                transactionDto.Category = _mapper.Map<GetCategoryDto>(category);
-
-                _logger.LogInformation("Successfully created transaction {TransactionId} for user {UserId}",
-                    createdTransaction.Id, request.UserId);
-                return new CreateTransactionFromMessageCommandResponse
-                {
-                    Success = true,
-                    Message = "Transaction created successfully from AI parsing and Created Transaction",
-                    transaction = aiTransactionDto,
-                    HasBeenSaved = true
-                };
-            }
-            else
+            return new CreateTransactionFromMessageCommandResponse
             {
-                // // Map to DTO
-                var transactionDto = new GetTransactionDto()
-                {
-                    Id = Guid.NewGuid(),
-                    Description = aiTransactionDto.Description,
-                    Amount = aiTransactionDto.Amount,
-                    ExpenseDate = aiTransactionDto.ExpenseDate,
-                };
-                transactionDto.Category = _mapper.Map<GetCategoryDto>(category);
-
-                return new CreateTransactionFromMessageCommandResponse
-                {
-                    Success = true,
-                    Message = "Transaction created successfully from AI parsing. But haven't created a transaction",
-                    transaction = aiTransactionDto,
-                    HasBeenSaved = false
-                };
-            }
+                Success = true,
+                Message = "Transaction created successfully from AI parsing. But haven't created a transaction",
+                transaction = aiTransactionDto,
+            };
         }
         catch (Exception ex)
         {

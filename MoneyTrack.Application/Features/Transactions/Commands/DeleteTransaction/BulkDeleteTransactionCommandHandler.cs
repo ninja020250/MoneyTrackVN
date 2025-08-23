@@ -15,8 +15,6 @@ public class BulkDeleteTransactionCommandHandler(
         
         var response = new BaseResponse();
         var deletedCount = 0;
-        var notFoundIds = new List<Guid>();
-        var errors = new List<string>();
 
         // Handle empty list case
         if (request.TransactionIds == null || !request.TransactionIds.Any())

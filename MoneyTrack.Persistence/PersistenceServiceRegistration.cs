@@ -12,7 +12,7 @@ public static class PersistenceServiceRegistration
     public static IServiceCollection AddPersistenceServices(this IServiceCollection services,
         IConfiguration configuration)
     {
-        var connectionString =  configuration.GetConnectionString("DefaultConnection");
+        var connectionString =  configuration.GetConnectionString("RailwayDBConnection");
 
         services.AddDbContext<MoneyTrackDbContext>(options =>
             options.UseNpgsql(connectionString));

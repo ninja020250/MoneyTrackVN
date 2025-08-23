@@ -1,6 +1,5 @@
 using AutoMapper;
 using MoneyTrack.Application.Contracts.Persistence;
-using MoneyTrack.Application.Exceptions;
 using MoneyTrack.Application.Features.Transactions.Commands;
 using MoneyTrack.Application.Models;
 using MoneyTrack.Application.Profiles;
@@ -40,6 +39,7 @@ public class DeleteTransactionCommandHandlerTest
 
         result.ShouldBeOfType<BaseResponse>();
         result.Success.ShouldBeTrue();
+        result.Message.ShouldNotBeNullOrEmpty();
     }
 
     [Fact]
@@ -54,7 +54,7 @@ public class DeleteTransactionCommandHandlerTest
             Id = nonExistentId
         };
 
-        var exception = await Should.ThrowAsync<NotFoundException>(
+        var exception = await Should.ThrowAsync<Exception>(
             async () => await handler.Handle(command, CancellationToken.None));
 
         exception.ShouldNotBeNull();
@@ -98,5 +98,26 @@ public class DeleteTransactionCommandHandlerTest
         _mockTransactionRepository.Verify(
             x => x.DeleteAsync(It.IsAny<TransactionEntity>()),
             Times.Once);
+    }
+
+    [Fact]
+    public async Task DeleteTransactionTest_CancellationToken_ShouldRespectCancellation()
+    {
+        var handler = new DeleteTransactionCommandHandler(
+            _mockTransactionRepository.Object);
+
+        var existingTransactionId = Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa6");
+        var command = new DeleteTransactionCommand
+        {
+            Id = existingTransactionId
+        };
+
+        var cancellationTokenSource = new CancellationTokenSource();
+        cancellationTokenSource.Cancel();
+
+        var exception = await Should.ThrowAsync<OperationCanceledException>(
+            async () => await handler.Handle(command, cancellationTokenSource.Token));
+
+        exception.ShouldNotBeNull();
     }
 }

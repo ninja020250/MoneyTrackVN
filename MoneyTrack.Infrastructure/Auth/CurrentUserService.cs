@@ -4,7 +4,7 @@ using MoneyTrack.Application.Contracts.Persistence;
 
 namespace MoneyTrack.Infrastructure.Auth;
 
-public class CurrentUserService: ICurrentUserService
+public class CurrentUserService : ICurrentUserService
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
 
@@ -18,7 +18,13 @@ public class CurrentUserService: ICurrentUserService
         get
         {
             var userIdClaim = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            return new Guid(userIdClaim);
+
+            if (Guid.TryParse(userIdClaim, out var userId))
+            {
+                return userId;
+            }
+
+            return null;
         }
     }
 

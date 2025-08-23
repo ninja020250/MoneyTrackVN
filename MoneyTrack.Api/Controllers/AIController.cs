@@ -1,7 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MoneyTrack.Api.Filters;
 using MoneyTrack.Application.Contracts.Persistence;
 using MoneyTrack.Application.Exceptions;
 using MoneyTrack.Application.Features.AI;
@@ -16,7 +15,6 @@ public class AIController(IMediator _mediator, ICurrentUserService _currentUserS
 {
     [HttpPost("create-transaction")]
     [Authorize(Roles = $"{nameof(RoleName.Guest)}, {nameof(RoleName.Admin)}")]
-    [ServiceFilter(typeof(ApiUsageLimitFilter))]
     public async Task<ActionResult<CreateTransactionFromMessageCommandResponse>> CreateTransaction(
         [FromBody] CreateTransactionFromMessageRequest request)
     {
