@@ -1,7 +1,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MoneyTrack.Application.Features.Auth.Commands;
+using MoneyTrack.Application.Features.Auth.Queries;
 using MoneyTrack.Application.Models.Auth;
+using MoneyTrack.Application.Models.User;
 
 namespace MoneyTrack.Api.Controllers;
 
@@ -50,5 +52,11 @@ public class AuthController(IMediator _mediator) : ControllerBase
         var command = new VerifyOtpCommand() { Email = request.Email, Otp = request.Otp };
 
         return await _mediator.Send(command);
+    }
+
+    [HttpPost("profile")]
+    public async Task<ActionResult<UserDto>> GetProfile()
+    {
+        return await _mediator.Send(new GetProfileQuery());
     }
 }

@@ -13,7 +13,7 @@ namespace MoneyTrack.Api.Controllers;
 [ApiController]
 public class AIController(IMediator _mediator, ICurrentUserService _currentUserService) : ControllerBase
 {
-    [HttpPost("create-transaction")]
+    [HttpPost("transform-transaction")]
     [Authorize(Roles = $"{nameof(RoleName.Guest)}, {nameof(RoleName.Admin)}")]
     public async Task<ActionResult<CreateTransactionFromMessageCommandResponse>> CreateTransaction(
         [FromBody] CreateTransactionFromMessageRequest request)
@@ -28,7 +28,7 @@ public class AIController(IMediator _mediator, ICurrentUserService _currentUserS
         return await _mediator.Send(command);
     }
 
-    [HttpPost("create-transaction/free")]
+    [HttpPost("transform-transaction/free")]
     public async Task<ActionResult<CreateTransactionFromMessageCommandResponse>> CreateTransactionFree(
         [FromBody] CreateTransactionFromMessageRequest request)
     {
