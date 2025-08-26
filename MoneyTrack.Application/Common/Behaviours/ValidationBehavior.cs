@@ -25,6 +25,7 @@ public class ValidationBehavior<TRequest, TResponse>(IEnumerable<IValidator<TReq
             {
                 throw new MoneyTrack.Application.Exceptions.ValidationException() { ValidationErrors = failures };
             }
+            return await next();
         }
 
         return await next();

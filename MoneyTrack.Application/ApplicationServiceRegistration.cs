@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using MoneyTrack.Application.Common.Behaviours;
+using MoneyTrack.Application.Features.AI;
 using MoneyTrack.Application.Features.Transactions.Commands;
 using MoneyTrack.Application.Features.Users.Commands;
 
@@ -23,6 +24,7 @@ public static class ApplicationServiceRegistration
     private static IServiceCollection AddValidatorService(this IServiceCollection services)
     {
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+        services.AddValidatorsFromAssemblyContaining<CreateTransactionFromMessageCommand>();
         services.AddValidatorsFromAssemblyContaining<CreateTransactionCommand>();
         services.AddValidatorsFromAssemblyContaining<UpdateTransactionCommand>();
         services.AddValidatorsFromAssemblyContaining<CreateUserCommand>();
