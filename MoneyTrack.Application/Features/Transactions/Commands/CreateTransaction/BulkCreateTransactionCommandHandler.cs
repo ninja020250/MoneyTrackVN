@@ -5,7 +5,7 @@ using MoneyTrack.Application.Features.Transactions.Queries;
 using MoneyTrack.Application.Models.Transaction;
 using MoneyTrack.Domain.Entities;
 
-namespace MoneyTrack.Application.Features.Transactions.Commands;
+namespace MoneyTrack.Application.Features.Transactions.Commands.CreateTransaction;
 
 public class BulkCreateTransactionCommandHandler(
     ITransactionRepository _transactionRepository,

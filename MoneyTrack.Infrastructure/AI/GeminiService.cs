@@ -80,6 +80,7 @@ public class GeminiService(
             - If the category cannot be null and should be one of code of list category codes.
             - Amount should be positive number
             - Description should be concise but descriptive
+            - Description should follow language as the user's message
             - Message referred language: {language}
             - currency unit is {currencyUnit}
 

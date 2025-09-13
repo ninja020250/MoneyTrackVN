@@ -3,6 +3,7 @@ using MoneyTrack.Application.Contracts.Infrastructure;
 using MoneyTrack.Application.Exceptions;
 using Microsoft.Extensions.Options;
 using MoneyTrack.Application.Contracts.Persistence;
+using MoneyTrack.Application.Responses;
 using MoneyTrack.Domain.Entities;
 
 namespace MoneyTrack.Application.Features.ApiUsage;

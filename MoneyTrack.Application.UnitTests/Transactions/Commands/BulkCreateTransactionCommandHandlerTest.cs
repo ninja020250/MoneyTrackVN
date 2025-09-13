@@ -1,6 +1,7 @@
 using AutoMapper;
 using MoneyTrack.Application.Contracts.Persistence;
 using MoneyTrack.Application.Features.Transactions.Commands;
+using MoneyTrack.Application.Features.Transactions.Commands.CreateTransaction;
 using MoneyTrack.Application.Features.Transactions.Queries;
 using MoneyTrack.Application.Models.Transaction;
 using MoneyTrack.Application.Profiles;
