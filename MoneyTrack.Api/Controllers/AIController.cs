@@ -19,7 +19,7 @@ public class AIController(IMediator _mediator, ICurrentUserService _currentUserS
         [FromBody] CreateTransactionFromMessageRequest request)
     {
         var userId = _currentUserService.UserId
-                     ?? throw new UnauthenticatedException("User has no right!");
+                     ?? throw new UnauthenticatedException("User has no right !");
         var command = new CreateTransactionFromMessageCommand
         {
             Message = request.Message,
