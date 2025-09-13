@@ -30,6 +30,6 @@ public class RequestOtpCommandHandler(IOtpService _otpService, IEmailService _em
             To = lowercaseEmail,
         };
 
-        await _emailService.SendEmailAsync(mail);
+        await _emailService.SendEmailByApiAsync(mail);
     }
 }

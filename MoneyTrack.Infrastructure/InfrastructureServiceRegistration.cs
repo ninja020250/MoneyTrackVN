@@ -20,12 +20,12 @@ public static class InfrastructureServiceRegistration
 
         services.AddScoped<GeminiLLMAdapter>();
         services.AddScoped<ILLMServiceFactory, LLMServiceFactory>();
-        
+
         services.AddHttpClient<IGeminiService, GeminiService>(client =>
         {
             client.DefaultRequestHeaders.Add("User-Agent", "MoneyTrack/1.0");
         });
-        
+
         services.AddScoped<IGeminiService, GeminiService>();
 
         services.AddScoped<ILLMService>(provider =>
@@ -33,9 +33,10 @@ public static class InfrastructureServiceRegistration
             var factory = provider.GetRequiredService<ILLMServiceFactory>();
             return factory.CreateDefaultLLMService();
         });
-        
+
         services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
         services.AddTransient<IEmailService, EmailService>();
+        services.AddHttpClient<IEmailService, EmailService>();
         services.AddTransient<IJwtService, JwtService>();
 
         services.AddSingleton<IOtpService, OtpService>();
