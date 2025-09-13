@@ -65,20 +65,21 @@ public class
             }
 
             // // Map to DTO
-            var transactionDto = new GetTransactionDto()
+            var transactionDto = new AITransactionDto()
             {
                 Id = Guid.NewGuid(),
                 Description = aiTransactionDto.Description,
                 Amount = aiTransactionDto.Amount,
                 ExpenseDate = aiTransactionDto.ExpenseDate,
+                CategoryCode = category.Code,
+                Category = _mapper.Map<GetCategoryDto>(category)
             };
-            transactionDto.Category = _mapper.Map<GetCategoryDto>(category);
 
             return new CreateTransactionFromMessageCommandResponse
             {
                 Success = true,
                 Message = "Transaction created successfully from AI parsing. But haven't created a transaction",
-                transaction = aiTransactionDto,
+                transaction = transactionDto,
             };
         }
         catch (Exception ex)
